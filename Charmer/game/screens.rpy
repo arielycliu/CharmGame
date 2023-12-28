@@ -136,13 +136,15 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    # replace gui/textbox with dialoguecontainer
+    background Image("gui/DialogueContainer.png", xalign=0.5, yalign=1.0)
 
 style namebox:
-    xpos gui.name_xpos
+    xpos 100 
+    # gui.name_xpos
     xanchor gui.name_xalign
     xsize gui.namebox_width
-    ypos gui.name_ypos
+    ypos 10 # gui.name_ypos
     ysize gui.namebox_height
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
@@ -156,8 +158,8 @@ style say_label:
 style say_dialogue:
     properties gui.text_properties("dialogue")
 
-    xpos gui.dialogue_xpos
-    xsize gui.dialogue_width
+    xpos 100 # gui.dialogue_xpos
+    xsize 1800 # gui.dialogue_width
     ypos gui.dialogue_ypos
 
     adjust_spacing False
@@ -290,21 +292,27 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
+        # xpos gui.navigation_xpos
+        # Ariel changed to navigation positioned in center
+        if main_menu:
+            xalign 0.5
+        else:
+            xpos gui.navigation_xpos
         yalign 0.5
 
         spacing gui.navigation_spacing
 
         if main_menu:
-
+            xalign 0.5
             textbutton _("Start") action Start()
 
         else:
-
+            xpos gui.navigation_xpos
             textbutton _("History") action ShowMenu("history")
 
             textbutton _("Save") action ShowMenu("save")
-
+        
+        xpos 210
         textbutton _("Load") action ShowMenu("load")
 
         textbutton _("Preferences") action ShowMenu("preferences")
@@ -340,6 +348,8 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
+    xalign 0.5  
+    # Ariel added property center aligned
 
 
 ## Main Menu screen ############################################################

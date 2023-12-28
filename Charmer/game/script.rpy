@@ -6,7 +6,7 @@
 default charm = 0
 
 # To avoid repeatedly typing character name we can define them with a shortform like "j" and an accent color
-define j = Character("Janice",  color="#c8ffc8")
+define j = Character("Janice",  color="#e460de")
 
 # we can also define other things like transitions, now we can use with slowerdissolve to quickly get a slower dissolve transition
 define slowerdissolve = Dissolve(2.0)
@@ -18,10 +18,11 @@ image logo = "janice logo.png"
 # The game starts here.
 
 label start:
-    show bg purple
+    show bg temple
     show screen bars
 
     show may normal
+    j "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet ligula quam. Phasellus vel erat sed lacus feugiat faucibus. Donec sodales, eros vitae vehicula dapibus, enim elit eleifend risus, eget sagittis est risus id diam. Curabitur maximus libero lacus, nec varius ex ultricies ut. Maecenas id posuere erat. Pellentesque lacinia lacus quis massa tempor, a dapibus eros semper."
 
     $ charm = 0
     j "Test Charm at 0"
