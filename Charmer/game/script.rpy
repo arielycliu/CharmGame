@@ -3,6 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+default charm = 0
+
 # To avoid repeatedly typing character name we can define them with a shortform like "j" and an accent color
 define j = Character("Janice",  color="#c8ffc8")
 
@@ -16,6 +18,28 @@ image logo = "janice logo.png"
 # The game starts here.
 
 label start:
+    show bg purple
+    show screen bars
+
+    show may normal
+
+    $ charm = 0
+    j "Test Charm at 0"
+    $ charm = 10
+    j "Test Charm at 10"
+    $ charm = 50
+    j "Test Charm at 50"
+    $ charm = 75
+    j "Test Charm at 75"
+    $ charm = 99
+    j "Test Charm at 99"
+    $ charm = 100
+    j "Test Charm at 100"
+
+    hide may normal
+
+
+label intro:
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
