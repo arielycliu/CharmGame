@@ -6,6 +6,9 @@
 # To avoid repeatedly typing character name we can define them with a shortform like "j" and an accent color
 define j = Character("Janice",  color="#c8ffc8")
 
+# redefine an image's tag
+image logo = "janice logo.png"
+
 
 # The game starts here.
 
@@ -15,7 +18,13 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg purple
+    show bg purple
+    with fade
+
+    # show only replaces bg image
+    # scene removes bg sprite and images
+
+
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -28,14 +37,14 @@ label start:
 
     # show multiple people
     show athena tired1
-    show athena asleep at right  
+    show chad angry at right  
 
     # To avoid repeatedly typing character name we can define them with a shortform like "j" and an accent color
     j "Another way for Janice to say I like to eat cherry pits"
 
     # hide people
-    show athena tired1
-    hide athena asleep
+    show athena asleep
+    hide chad angry
 
     # Narrator statements look like this
     "Janice eats a cherry pit"
