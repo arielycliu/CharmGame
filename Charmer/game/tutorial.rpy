@@ -35,4 +35,4 @@ label tutorial:
     mc "Yeah, let's hope so. I can't show up to the New Year's Gala without a date. The others would..."
 
     show chad sad
-    claire "Hey, look, don't worry about that now. You've got seven people right over there, just waiting to get to know you."
+    claire "Hey, look, don't worry about that now. You've got four people right over there, just waiting to get to know you."
