@@ -3,7 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+# To avoid repeatedly typing character name we can define them with a shortform like "j" and an accent color
+define j = Character("Janice",  color="#c8ffc8")
 
 
 # The game starts here.
@@ -14,19 +15,30 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    scene bg purple
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
+    show athena tired1
 
-    # These display lines of dialogue.
+    # Say statements the format goes like "character" "text they speak"
+    "Janice" "I like to eat cherry pits"
 
-    e "You've created a new Ren'Py game."
+    # show multiple people
+    show athena tired1
+    show athena asleep at right  
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    # To avoid repeatedly typing character name we can define them with a shortform like "j" and an accent color
+    j "Another way for Janice to say I like to eat cherry pits"
+
+    # hide people
+    show athena tired1
+    hide athena asleep
+
+    # Narrator statements look like this
+    "Janice eats a cherry pit"
 
     # This ends the game.
 
