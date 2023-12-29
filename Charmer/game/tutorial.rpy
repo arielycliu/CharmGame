@@ -26,7 +26,7 @@ label tutorial:
     claire "It's me!"
 
     show claire smile 
-    "Claire gives me a little jazz-hand wave. She's been helping me with the preparations for this party, but to be honest, I thought she'd gone home already."
+    "Claire gives me a little jazz-hand wave. She's been helping me with the preparations for this party, but to be honest, I thought she'd gone home already. She already has a target, so there's really no need for her to stick around."
 
     "I guess I've been a little zoned out, worrying about this."
 
@@ -54,6 +54,11 @@ label tutorial:
     label yesknow:
         show claire delighted2
         claire "Wow, just rearing to go, huh? Well, don't let me stop you then."
+
+        label charm:
+        show screen bars
+        
+        $ charm = 0
         
         show claire delighted
         claire "Remember to save your charm for when you really need it, and have fun out there!"
@@ -78,10 +83,10 @@ label tutorial:
 
         claire "The really important thing to do here is to make sure that you use your CHARM wisely."
 
-        label charme:
+        label charm:
         show screen bars
         
-        $ charme = 0
+        $ charm = 0
         "I take a look at the top left corner of my screen. I guess she's talking about that magenta bar."
 
         claire "Yep, that's the one!"
@@ -94,10 +99,10 @@ label tutorial:
         show claire smile
         claire "So sometimes, you might want to just make decisions that aren't as CHARMing, rather than ones that endear you to people."
 
-        mc "Yeah, like you're one to talk. I've never seen you scrape the bottom of your CHARM limit, Claire."
+        mc "Like you're one to talk. I've never seen you scrape the bottom of your CHARM limit, Claire."
 
         show claire annoyed
-        claire "Yeah, and what's that supposed to mean? I'm just more naturally chatty."
+        claire "Yeah, and what's that supposed to mean? I'm just more naturally outgoing."
 
         mc "That's not the problem at all…"
 
@@ -107,10 +112,56 @@ label tutorial:
         show claire smile
         claire "You just have to keep them invested."
 
+        claire "Then, at the end of the night, you'll get CHARM back from the people you've successfully wooed into staying with you."
+
+        show claire smile2
+        claire "You can put that CHARM toward capturing the heart of whoever you care for most!"
+
+        show claire smile
+        claire "That's really about it."
+
         jump claire_leave
     
     label claire_leave:
+        show claire smile
+        claire "Oh, wait - before you go, I've got something to give you."
+
+        claire "Only because we're such good friends, okay, <NAME>? Don't expect me to do you favours like this all the time."
+
+        show claire smile2
+        "She holds out her closed fist and drops a bracelet into my hand."
+
+        "ariel this is where you show the picture of the 2 charm bracelet"
+
+        show claire smile2
+        claire "These are from the last two dates of mine. I think you met one of them, actually."
+
+        show claire smile
+        claire "But anyway, that's not important. Go on, put it on."
+
+        mc "I- I can't take this!"
+
+        show claire delighted2
+        claire "Oh, pooh. Don't be so polite."
+
         show claire delighted
+        claire "Think of this as a birthday present. They're just a good-luck… well, you know."
+
+        claire "How are you planning to hunt for a date with nothing to fuel you? Even humans need energy to go about their day."
+
+        claire "And besides, I trust that you'd do the same for me, if I ever needed your help."
+
+        show claire smile
+        claire "We succubi have to look out for each other, you know?"
+
+        show claire smile2
+        claire "Now do it. Don't make me ask again."
+        
+        "Begrudgingly, I put it on. As the clasp clicks into place, I feel the CHARM flood through me, like a cold drink on a hot summer's day. The stars jingle cheerily."
+
+        show claire delighted
+        claire "Looks like they're kicking in."
+        
         claire "I'll leave you alone to go hit up your targets, then, [name]."
 
         show claire delighted2
