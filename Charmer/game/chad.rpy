@@ -22,16 +22,16 @@ label chad:
 
     "What am I saying?"
 
-    "This guy isn't my maid!"
+    "They aren't my maid!"
 
     mc "Sorry, I didn't mean it to sound like a request."
 
     show chad delighted
     chad_unknown "No, don't worry about it. I can tell you're feeling a bit peckish, and I'm happy to assist anyone, especially someone as charming as yourself."
 
-    "I feel yourself blushing just a bit at how smooth they are. "
+    "I feel myself blushing just a bit."
 
-    "You see them turn around and start to boil water. "
+    "I see them turn around and start to boil water. "
 
     "Once the water boils, they drop in the pasta and while that is cooking, he prepares a quick sauce of olive oil, garlic, basil, and canned tomatoes."
 
@@ -64,19 +64,23 @@ label chad:
                 while charm > charm_start - 10: # decrease charm bar
                     $ charm -= 1
                     pause(0.0001)
-
                 jump photo_1
             "Thanks.":
                 $ chad_approval -= 5
+                if chad_approval <= 0:
+                    jump chad_leaves
                 jump photo_2
             "Your name is Chad right? That's a stupid name for a girl.":
                 $ chad_approval -= 20
+                # don't leave yet give mc another chance
                 jump photo_3
     else:
         menu:
             "How should I respond to Chad?"
             "Thanks.":
                 $ chad_approval -= 5
+                if chad_approval <= 0:
+                    jump chad_leaves
                 jump photo_2
             "Your name is Chad right? That's a stupid name for a girl.":
                 $ chad_approval -= 20
