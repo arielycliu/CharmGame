@@ -53,7 +53,7 @@ label ellie_charm:
         show image image_path:
             xpos 400 ypos 0
         $ frame_number += 1
-        pause 0.005
+        pause 0.002
         jump smoke_start
     label smoke_end:
         scene bg hallway night
@@ -62,7 +62,10 @@ label ellie_charm:
         scene bg black
         with Dissolve(0.5)
 
-        $ charm += 25
+        $ charm_start = charm
+        while charm < charm_start + 25:
+            $ charm += 1
+            pause(0.0001)
 
         if 0 <= charm < 25: 
             show charms0
@@ -120,7 +123,7 @@ label chad_charm:
         show image image_path:
             xpos 400 ypos 0
         $ frame_number += 1
-        pause 0.005
+        pause 0.002
         jump smoke_start1
     label smoke_end1:
         scene bg kitchen night
@@ -129,7 +132,10 @@ label chad_charm:
         scene bg black
         with Dissolve(0.5)
 
-        $ charm += 25
+        $ charm_start = charm
+        while charm < charm_start + 25:
+            $ charm += 1
+            pause(0.0001)
 
         if 0 <= charm < 25: 
             show charms0
@@ -195,7 +201,7 @@ label may_charm:
         show image image_path:
             xpos 400 ypos 0
         $ frame_number += 1
-        pause 0.005
+        pause 0.002
         jump smoke_start2
     label smoke_end2:
         scene bg sittingroom night
@@ -204,7 +210,10 @@ label may_charm:
         scene bg black
         with Dissolve(0.5)
 
-        $ charm += 25
+        $ charm_start = charm
+        while charm < charm_start + 25:
+            $ charm += 1
+            pause(0.0001)
 
         if 0 <= charm < 25: 
             show charms0
@@ -252,7 +261,7 @@ label athena_charm:
         show image image_path:
             xpos 400 ypos 0
         $ frame_number += 1
-        pause 0.005
+        pause 0.002
         jump smoke_start3
     label smoke_end3:
         scene bg bedroom night
@@ -261,7 +270,10 @@ label athena_charm:
         scene bg black
         with Dissolve(0.5)
 
-        $ charm += 25
+        $ charm_start = charm
+        while charm < charm_start + 25:
+            $ charm += 1
+            pause(0.0001)
 
         if 0 <= charm < 25: 
             show charms0

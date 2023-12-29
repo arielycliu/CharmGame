@@ -214,5 +214,5 @@ image charms4:
     charm_zoom
 
 label start:
-    $ name = "Ariel"
+    default name = "Ariel"
     jump chmsq

@@ -129,7 +129,15 @@ label tutorial:
         show claire smile2
         "She holds out her closed fist and drops a bracelet into my hand."
 
-        "iozo this is where you show the picture of the 2 charm bracelet"
+        hide claire smile2
+        show bg black
+        with Dissolve(0.5)
+
+        show charms2
+        "You received Claire's charm braclet"
+
+        scene bg livingroom
+        with Dissolve(0.5)
 
         show claire smile2
         claire "These are from the last two dates of mine. I think you met one of them, actually."
@@ -154,7 +162,13 @@ label tutorial:
 
         show claire smile2
         claire "Now do it. Don't make me ask again."
+    
+        while charm < 50:
+            $ charm += 1
+            pause(0.0001)
         
+        $ charm = 50
+
         "Begrudgingly, I put it on. As the clasp clicks into place, I feel the CHARM flood through me, like an iced drink on a hot summer's day. The stars jingle cheerily."
 
         show claire delighted
