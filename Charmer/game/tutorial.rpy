@@ -39,8 +39,8 @@ label tutorial:
     claire "Hey, look, don't worry about that now. You've got four people right over there, just waiting to get to know you."
 
     show claire annoyed
-    claire "You've got a good chance here. Don't blow it by worrying."
-    
+    claire "You have a good chance here. Don't blow it by worrying."
+
     show claire normal
     claire "Have you hosted anything like this before?"
 
@@ -99,7 +99,7 @@ label tutorial:
         show claire annoyed
         claire "Yeah, and what's that supposed to mean? I'm just more naturally chatty."
 
-        "That's not the problem at all…"
+        mc "That's not the problem at all…"
 
         show claire smile2
         claire "And that's okay! We can't all be performing all the time."
