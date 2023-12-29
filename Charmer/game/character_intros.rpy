@@ -1,7 +1,7 @@
 label character_intros:
     scene bg bedroom
 
-    show athena tired1
+    show athena tired1 
     athena "Hi, I'm Athena..."
 
     scene bg kitchen
