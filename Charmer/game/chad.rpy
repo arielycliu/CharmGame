@@ -22,16 +22,16 @@ label chad:
 
     "What am I saying?"
 
-    "This guy isn't my maid!"
+    "They aren't my maid!"
 
     mc "Sorry, I didn't mean it to sound like a request."
 
     show chad delighted
     chad_unknown "No, don't worry about it. I can tell you're feeling a bit peckish, and I'm happy to assist anyone, especially someone as charming as yourself."
 
-    "I feel yourself blushing just a bit at how smooth they are. "
+    "I feel myself blushing just a bit."
 
-    "You see them turn around and start to boil water. "
+    "I see them turn around and start to boil water. "
 
     "Once the water boils, they drop in the pasta and while that is cooking, he prepares a quick sauce of olive oil, garlic, basil, and canned tomatoes."
 
@@ -55,26 +55,39 @@ label chad:
     show chad blush
     chad "I heard a bit about you from Claire. Your name is [name] right? You're even prettier in person - Claire's photo doesn't do you justice."
 
-    menu:
-        "How should I respond to Chad?"
-        "If you keep this up, I think I'll like you too much. (-10 Charm)":
-            $ chad_approval += 0
-            $ charm_start = charm
-            while charm > charm_start - 10:
-                $ charm -= 1
-                pause(0.0001)
-
-            jump photo_1
-        "Thanks.":
-            $ chad_approval -= 5
-            jump photo_2
-        "Your name is Chad right? That's a stupid name for a girl.":
-            $ chad_approval -= 20
-            jump photo_3
+    if charm >= 10:  # charm choice 1
+        menu:
+            "How should I respond to Chad?"
+            "If you keep this up, I think I'll like you too much. (-10 Charm)":
+                $ chad_approval += 0
+                $ charm_start = charm
+                while charm > charm_start - 10: # decrease charm bar
+                    $ charm -= 1
+                    pause(0.0001)
+                jump photo_1
+            "Thanks.":
+                $ chad_approval -= 5
+                if chad_approval <= 0:
+                    jump chad_leaves
+                jump photo_2
+            "Your name is Chad right? That's a stupid name for a girl.":
+                $ chad_approval -= 20
+                # don't leave yet give mc another chance
+                jump photo_3
+    else:
+        menu:
+            "How should I respond to Chad?"
+            "Thanks.":
+                $ chad_approval -= 5
+                if chad_approval <= 0:
+                    jump chad_leaves
+                jump photo_2
+            "Your name is Chad right? That's a stupid name for a girl.":
+                $ chad_approval -= 20
+                jump photo_3
     
     label photo_1:
         "Whoa, I don't even sound like myself. I better thank Claire properly later for the charms."
-
         show chad shocked
         chad "Whoa bold... not that I don't like it..."
         chad "I kinda like it..."
@@ -89,25 +102,26 @@ label chad:
         show chad angry
         chad "That's such a mean thing to say. Plus I'm a boy!"
 
-        menu:
-            "How should I salvage this?"
+        if charm >= 50: # charm choice 2
+            menu:
+                "How should I salvage this?"
 
-            "Nonono I didn't mean it. Sorry I get nervous when talking to new people. (-50 charm)":
-                $ chad_approval += 10
+                "Nonono I didn't mean it. Sorry I get nervous when talking to new people. (-50 charm)":
+                    $ chad_approval += 10 # approval went from 0 to 10
 
-                $ charm_start = charm
-                while charm > charm_start - 50:
-                    $ charm -= 1
-                    pause(0.0001)
+                    $ charm_start = charm
+                    while charm > charm_start - 50:
+                        $ charm -= 1
+                        pause(0.0001)
 
-                show chad normal
-                chad "Oh no worries, I can understand being nervous. I get nervous too."
-            
-            "Oh, well it's still an ugly name for a guy.":
-                $ chad_approval -= 20
-                if chad_approval <= 0:
+                    show chad normal
+                    chad "Oh no worries, I can understand being nervous. I get nervous too."
+                
+                "Oh, well it's still an ugly name for a guy.":
                     jump chad_leaves
-        
+        else:
+            mc "Oh, well it's still an ugly name for a guy."        
+            jump chad_leaves
         jump photo_merge
     
 label photo_merge:
@@ -189,53 +203,72 @@ label chad_hobbies:
     show chad laugh
     chad "I could make that happen."
 
-    menu:
-        "How should I respond?"
-        "Really? You'd teach me?":
-            show chad blush
-            chad "Of course! I definitely wouldn't mind having a sous chef as charming as yourself in my kitchen."
-            mc "Well, I might just take you up on that offer. In the meantime, I'll just have to savor the memory of your delicious meal."
-            chad "Well I won't take up much more of your time. I know you still have many more dates to meet."
-        "Would you like to move in with me? (-5 charm)":
-            
-            $ charm_start = charm
-            while charm > charm_start - 5:
-                $ charm -= 1
-                pause(0.0001)
+    if charm >= 5:
+        menu:
+            "How should I respond?"
+            "Really? You'd teach me?":
+                show chad blush
+                chad "Of course! I definitely wouldn't mind having a sous chef as charming as yourself in my kitchen."
+                mc "Well, I might just take you up on that offer. In the meantime, I'll just have to savor the memory of your delicious meal."
 
-            show chad shocked
-            $ chad_approval -= 5
-            if chad_approval <= 0:
-                jump chad_leaves
-            chad "Move in? That's a big step, isn't it? I think it might be too early for me to say yes."
+                show chad normal
+                chad "Well I won't take up much more of your time. I know you still have many more dates to meet."
+            "Would you like to move in with me? (-5 charm)":
+                
+                $ charm_start = charm
+                while charm > charm_start - 5:
+                    $ charm -= 1
+                    pause(0.0001)
 
-            show chad smile
-            chad "Err, how about dinner at my place tomorrow instead."
-            menu: 
-                "Count me in!":
-                    show chad delighted
-                    chad "Alright, I'll make my specialty dish!"
+                show chad shocked
+                $ chad_approval -= 5
+                if chad_approval <= 0:
+                    jump chad_leaves
+                chad "Move in? That's a big step, isn't it? I think it might be too early for me to say yes."
 
-                    show chad normal 
-                    chad "Well I won't take up much more of your time. I know you still have many more dates to meet."
+                show chad smile
+                chad "Err, how about dinner at my place tomorrow instead."
+                menu: 
+                    "Count me in!":
+                        show chad delighted
+                        chad "Alright, I'll make my specialty dish!"
 
-                "No thank you.":
-                    show chad sad
-                    $ chad_approval -= 10
-                    if chad_approval <= 0:
-                        jump chad_leaves
-                    chad "Aww, that's a shame."
+                        show chad normal 
+                        chad "Well I won't take up much more of your time. I know you still have many more dates to meet."
 
-                    show chad normal
-                    chad "Well I won't take up much more of your time. I know you still have many more dates to meet."
-        "No thanks.":
-            $ chad_approval -= 10
-            if chad_approval <= 0:
-                jump chad_leaves
-            show chad normal
-            chad "Oh okay, sorry for imposing."
-            chad "Well I won't take up much more of your time. I know you still have many more dates to meet."
-    
+                    "No thank you.":
+                        show chad sad
+                        $ chad_approval -= 10
+                        if chad_approval <= 0:
+                            jump chad_leaves
+                        chad "Aww, that's a shame."
+
+                        show chad normal
+                        chad "Well I won't take up much more of your time. I know you still have many more dates to meet."
+            "No thanks.":
+                $ chad_approval -= 10
+                if chad_approval <= 0:
+                    jump chad_leaves
+                show chad normal
+                chad "Oh okay, sorry for imposing."
+                chad "Well I won't take up much more of your time. I know you still have many more dates to meet."
+    else:
+        menu:
+            "How should I respond?"
+            "Really? You'd teach me?":
+                show chad blush
+                chad "Of course! I definitely wouldn't mind having a sous chef as charming as yourself in my kitchen."
+                mc "Well, I might just take you up on that offer. In the meantime, I'll just have to savor the memory of your delicious meal."
+                show chad normal
+                chad "Well I won't take up much more of your time. I know you still have many more dates to meet."
+            "No thanks.":
+                $ chad_approval -= 10
+                if chad_approval <= 0:
+                    jump chad_leaves
+                show chad normal
+                chad "Oh okay, sorry for imposing."
+                chad "Well I won't take up much more of your time. I know you still have many more dates to meet."
+
     show chad smile
     chad "Feel free to drop back here anytime. I'll be in the kitchen, waiting to share it with you."
     jump ellie
