@@ -1,8 +1,8 @@
-default ellie_stayed = True
+default ellie_stayed = False
 default chad_stayed = True
 default may_stayed = True
-default athena_stayed = True
-default chosen_one = "Janice"
+default athena_stayed = False
+default chosen_one = "May"
 
 label chmsq:
     scene bg outside night
@@ -16,11 +16,17 @@ label chmsq:
 
     "I walk up to the breaker, and switch off all of the power."
 
-    if chosen_one != "Ellie":
+    if chosen_one != "Ellie" and ellie_stayed == True:
         jump ellie_charm
-    else:
+    elif chosen_one != "Chad" and chad_stayed == True:
         jump chad_charm
-
+    elif chosen_one != "May" and may_stayed == True:
+        jump may_charm
+    elif chosen_one != "Athena" and athena_stayed == True:
+        jump athena_charm
+    else:
+        jump after_charm
+ 
 #################################################################################################################
 
 label ellie_charm:
@@ -35,7 +41,11 @@ label ellie_charm:
 
     mc "Just a second..."
 
-    ellie "[name], I feel kinda weird"
+    ellie "Why are you grabbing my arm?"
+
+    mc "I'm a bit scared of the dark"
+
+    ellie "[name], my arm is starting to feel kinda weird"
 
     mc "Good"
 
@@ -79,10 +89,14 @@ label ellie_charm:
             show charms4
         "You earned 25 charm points from Ellie's soul"
 
-        if chosen_one != "Chad":
+        if chosen_one != "Chad" and chad_stayed == True:
             jump chad_charm
-        else:
+        elif chosen_one != "May" and may_stayed == True:
             jump may_charm
+        elif chosen_one != "Athena" and athena_stayed == True:
+            jump athena_charm
+        else:
+            jump after_charm
 
 #################################################################################################################
 
@@ -149,10 +163,12 @@ label chad_charm:
             show charms4
         "You earned 25 charm points from Chad's soul"
 
-        if chosen_one != "May":
+        if chosen_one != "May" and may_stayed == True:
             jump may_charm
-        else:
+        elif chosen_one != "Athena" and athena_stayed == True:
             jump athena_charm
+        else:
+            jump after_charm
 
 #################################################################################################################
 
@@ -227,11 +243,10 @@ label may_charm:
             show charms4
         "You earned 25 charm points from May's soul"
 
-        if chosen_one != "Athena":
+        if chosen_one != "Athena" and athena_stayed == True:
             jump athena_charm
         else:
             jump after_charm
-
 
 #################################################################################################################
 
@@ -291,7 +306,7 @@ label athena_charm:
 #################################################################################################################
 
 label after_charm:
-    scene bg bedroom night
+    scene bg hallway night
     show screen bars
     mc "Great, now I have [charm] charm points"
 
