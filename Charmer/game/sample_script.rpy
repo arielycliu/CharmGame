@@ -21,7 +21,7 @@ image logo = "janice logo.png"
 label charm:
     show bg temple
     show screen bars
-    
+
     show may normal
     j "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet ligula quam. Phasellus vel erat sed lacus feugiat faucibus. Donec sodales, eros vitae vehicula dapibus, enim elit eleifend risus, eget sagittis est risus id diam. Curabitur maximus libero lacus, nec varius ex ultricies ut. Maecenas id posuere erat. Pellentesque lacinia lacus quis massa tempor, a dapibus eros semper."
 
@@ -84,6 +84,11 @@ label intro:
 
 # label keyword -> dictates the window name
 label choices:
+    scene bg livingroom
+    show claire smile2: 
+        zoom 0.75
+        xpos 0.20
+        
     # create a flag to keep track of the decision the user makes
     default flag = False
 

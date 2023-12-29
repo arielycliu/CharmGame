@@ -1,4 +1,7 @@
 label character_intros:
+    show screen bars
+    $ charm = 200
+
     scene bg bedroom
 
     show athena tired1 

@@ -140,4 +140,4 @@ image may sweat:
 
 
 label start:
-    jump tutorial
+    jump choices
