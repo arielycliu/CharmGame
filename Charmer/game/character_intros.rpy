@@ -14,7 +14,7 @@ label character_intros:
     show ellie abashed
     ellie "Hello... I'm Ellie, let's get along!"
 
-    scene bg tvroom
+    scene bg sittingroom
 
     show may smirk
     may "Hey, the name's May - wanna play OLO with me?"
