@@ -1,5 +1,6 @@
 label chad:
     scene bg kitchen
+    show screen bars
 
     "I know the party just started but I'm so nervous that my intestines feel like they're in knots."
 
@@ -58,6 +59,11 @@ label chad:
         "How should I respond to Chad?"
         "If you keep this up, I think I'll like you too much. (-10 Charm)":
             $ chad_approval += 0
+            $ charm_start = charm
+            while charm > charm_start - 10:
+                $ charm -= 1
+                pause(0.0001)
+
             jump photo_1
         "Thanks":
             $ chad_approval -= 5
@@ -89,6 +95,12 @@ label chad:
 
             "Nonono I didn't mean it. Sorry I get nervous when talking to new people. (-50 charm)":
                 $ chad_approval += 10
+
+                $ charm_start = charm
+                while charm > charm_start - 50:
+                    $ charm -= 1
+                    pause(0.0001)
+
                 show chad normal
                 chad "Oh no worries, I can understand being nervous. I get nervous too."
             

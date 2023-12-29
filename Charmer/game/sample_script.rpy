@@ -17,6 +17,8 @@ image logo = "janice logo.png"
 
 # The game starts here.
 
+# Charm decreasing script
+
 
 # label charm:
 #     show bg temple

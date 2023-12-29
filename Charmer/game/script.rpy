@@ -220,5 +220,6 @@ image charms4:
     charm_zoom
 
 label start:
+    $ charm = 50
     default name = "Ariel"
     jump chad
