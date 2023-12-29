@@ -26,7 +26,7 @@ label tutorial:
     claire "It's me!"
 
     show claire smile 
-    "Claire gives me a little jazz-hand wave. She's been helping me with the preparations for this party, but to be honest, I thought she'd gone home already. She already has a target, so there's really no need for her to stick around."
+    "Claire gives me a little jazz-hand wave. She's been helping me with the preparations for this party, but to be honest, I thought she'd gone home already. She already has a date, so there's really no need for her to stick around."
 
     "I guess I've been a little zoned out, worrying about this."
 
