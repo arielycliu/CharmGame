@@ -18,27 +18,27 @@ image logo = "janice logo.png"
 # The game starts here.
 
 
-label charm:
-    show bg temple
-    show screen bars
+# label charm:
+#     show bg temple
+#     show screen bars
+    
+#     show may normal
+#     j "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet ligula quam. Phasellus vel erat sed lacus feugiat faucibus. Donec sodales, eros vitae vehicula dapibus, enim elit eleifend risus, eget sagittis est risus id diam. Curabitur maximus libero lacus, nec varius ex ultricies ut. Maecenas id posuere erat. Pellentesque lacinia lacus quis massa tempor, a dapibus eros semper."
 
-    show may normal
-    j "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet ligula quam. Phasellus vel erat sed lacus feugiat faucibus. Donec sodales, eros vitae vehicula dapibus, enim elit eleifend risus, eget sagittis est risus id diam. Curabitur maximus libero lacus, nec varius ex ultricies ut. Maecenas id posuere erat. Pellentesque lacinia lacus quis massa tempor, a dapibus eros semper."
+#     $ charm = 0
+#     j "Test Charm at 0"
+#     $ charm = 10
+#     j "Test Charm at 10"
+#     $ charm = 50
+#     j "Test Charm at 50"
+#     $ charm = 75
+#     j "Test Charm at 75"
+#     $ charm = 99
+#     j "Test Charm at 99"
+#     $ charm = 100
+#     j "Test Charm at 100"
 
-    $ charm = 0
-    j "Test Charm at 0"
-    $ charm = 10
-    j "Test Charm at 10"
-    $ charm = 50
-    j "Test Charm at 50"
-    $ charm = 75
-    j "Test Charm at 75"
-    $ charm = 99
-    j "Test Charm at 99"
-    $ charm = 100
-    j "Test Charm at 100"
-
-    hide may normal
+#     hide may normal
 
 
 label intro:
@@ -84,11 +84,6 @@ label intro:
 
 # label keyword -> dictates the window name
 label choices:
-    scene bg livingroom
-    show claire smile2: 
-        zoom 0.75
-        xpos 0.20
-        
     # create a flag to keep track of the decision the user makes
     default flag = False
 
