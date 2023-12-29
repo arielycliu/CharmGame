@@ -21,7 +21,7 @@ image logo = "janice logo.png"
 label charm:
     show bg temple
     show screen bars
-
+    
     show may normal
     j "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet ligula quam. Phasellus vel erat sed lacus feugiat faucibus. Donec sodales, eros vitae vehicula dapibus, enim elit eleifend risus, eget sagittis est risus id diam. Curabitur maximus libero lacus, nec varius ex ultricies ut. Maecenas id posuere erat. Pellentesque lacinia lacus quis massa tempor, a dapibus eros semper."
 

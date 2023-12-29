@@ -7,7 +7,7 @@ define may = Character("May", color="#3d3a59")
 define claire_unknown = Character("???", color="#A65A4C")
 define claire = Character("Claire", color="#A65A4C")
 
-
+# I made a change
 
 label start:
     jump tutorial 
