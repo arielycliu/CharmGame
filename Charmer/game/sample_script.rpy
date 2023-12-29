@@ -18,6 +18,10 @@ image logo = "janice logo.png"
 # The game starts here.
 
 # Charm decreasing script
+$ charm_start = charm
+while charm < charm_start + 25:
+    $ charm += 1
+    pause(0.0001)
 
 
 # label charm:
