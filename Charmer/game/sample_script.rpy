@@ -17,6 +17,7 @@ image logo = "janice logo.png"
 
 # The game starts here.
 
+
 label charm:
     show bg temple
     show screen bars
