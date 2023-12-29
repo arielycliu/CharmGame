@@ -55,7 +55,6 @@ label tutorial:
         show claire delighted2
         claire "Wow, just rearing to go, huh? Well, don't let me stop you then."
 
-        label charm:
         show screen bars
         
         $ charm = 0
@@ -83,7 +82,6 @@ label tutorial:
 
         claire "The really important thing to do here is to make sure that you use your CHARM wisely."
 
-        label charm:
         show screen bars
         
         $ charm = 0
