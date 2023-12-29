@@ -32,6 +32,9 @@ image chad angry:
 image chad annoyed:
     "images/Chad/chad annoyed.png"
     default_zoom
+image chad blush:
+    "images/Chad/chad blush.png"
+    default_zoom
 image chad delighted:
     "images/Chad/chad delighted.png"
     default_zoom
@@ -131,8 +134,8 @@ image may smile3:
 image may smirk:
     "images/May/may smirk.png"
     default_zoom
-image may suprised:
-    "images/May/may suprised.png"
+image may surprised:
+    "images/May/may surprised.png"
     default_zoom
 image may sweat:
     "images/May/may sweat.png"
@@ -190,5 +193,26 @@ image claire smug2:
     "images/Claire/claire smug2.png"
     claire_zoom
 
+transform charm_zoom:
+    zoom 0.75
+    ypos 0.75
+
+image charms0:
+    "images/Charms/charms0.png"
+    charm_zoom
+image charms1:
+    "images/Charms/charms1.png"
+    charm_zoom
+image charms2:
+    "images/Charms/charms2.png"
+    charm_zoom
+image charms3:
+    "images/Charms/charms3.png"
+    charm_zoom
+image charms4:
+    "images/Charms/charms4.png"
+    charm_zoom
+
 label start:
-    jump tutorial
+    $ name = "Ariel"
+    jump chmsq
