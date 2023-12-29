@@ -41,7 +41,7 @@ label tutorial:
     show claire annoyed
     claire "You have a good chance here. Don't blow it by worrying."
 
-    show claire normal
+    show claire smile
     claire "Have you hosted anything like this before?"
 
     menu:
@@ -70,7 +70,7 @@ label tutorial:
         show claire delighted
         claire "Ah, well, it's pretty simple, really."
 
-        claire "Everyone here's looking to find a date before the New Year's Gala, right? And that could be you!"
+        claire "Everyone here's looking to find a date before New Year's, right? And that could be you! No one wants to be lonely when the clock strikes twelve, or whatever, so you've got the perfect setup."
 
         show claire delighted2
         claire "So all you've got to do is sweet talk them until they're fighting over you!"
@@ -85,7 +85,7 @@ label tutorial:
         show screen bars
         
         $ charm = 0
-        "I take a look at the top left corner of my screen. I guess she's talking about that magenta bar."
+        "I take a look at the top left corner of my screen. I guess she's talking about that pink bar with the heart on it."
 
         claire "Yep, that's the one!"
 
@@ -102,7 +102,7 @@ label tutorial:
         show claire annoyed
         claire "Yeah, and what's that supposed to mean? I'm just more naturally outgoing."
 
-        mc "That's not the problem at all…"
+        mc "That's not the problem at all..."
 
         show claire smile2
         claire "And that's okay! We can't all be performing all the time."
@@ -124,12 +124,12 @@ label tutorial:
         show claire smile
         claire "Oh, wait - before you go, I've got something to give you."
 
-        claire "Only because we're such good friends, okay, <NAME>? Don't expect me to do you favours like this all the time."
+        claire "Only because we're such good friends, okay, [name]? Don't expect me to do you favours like this all the time."
 
         show claire smile2
         "She holds out her closed fist and drops a bracelet into my hand."
 
-        "ariel this is where you show the picture of the 2 charm bracelet"
+        "iozo this is where you show the picture of the 2 charm bracelet"
 
         show claire smile2
         claire "These are from the last two dates of mine. I think you met one of them, actually."
@@ -143,7 +143,7 @@ label tutorial:
         claire "Oh, pooh. Don't be so polite."
 
         show claire delighted
-        claire "Think of this as a birthday present. They're just a good-luck… well, you know."
+        claire "Think of this as a birthday present. They're just a good-luck - well, you know."
 
         claire "How are you planning to hunt for a date with nothing to fuel you? Even humans need energy to go about their day."
 
@@ -155,7 +155,7 @@ label tutorial:
         show claire smile2
         claire "Now do it. Don't make me ask again."
         
-        "Begrudgingly, I put it on. As the clasp clicks into place, I feel the CHARM flood through me, like a cold drink on a hot summer's day. The stars jingle cheerily."
+        "Begrudgingly, I put it on. As the clasp clicks into place, I feel the CHARM flood through me, like an iced drink on a hot summer's day. The stars jingle cheerily."
 
         show claire delighted
         claire "Looks like they're kicking in."
