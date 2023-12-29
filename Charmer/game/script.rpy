@@ -138,6 +138,57 @@ image may sweat:
     "images/May/may sweat.png"
     default_zoom
 
+transform claire_zoom:
+    zoom 0.75
+    xpos 0.50
+image claire angry1:
+    "images/Claire/claire angry1.png"
+    claire_zoom
+image claire angry2:
+    "images/Claire/claire angry2.png"
+    claire_zoom
+image claire annoyed:
+    "images/Claire/claire annoyed.png"
+    claire_zoom
+image claire crying:
+    "images/Claire/claire crying.png"
+    claire_zoom
+image claire delighted:
+    "images/Claire/claire delighted.png"
+    claire_zoom
+image claire delighted2:
+    "images/Claire/claire delighted2.png"
+    claire_zoom
+image claire normal:
+    "images/Claire/claire normal.png"
+    claire_zoom
+image claire o:
+    "images/Claire/claire o.png"
+    claire_zoom
+image claire sad:
+    "images/Claire/claire sad.png"
+    claire_zoom
+image claire shocked:
+    "images/Claire/claire shocked.png"
+    claire_zoom
+image claire sleepy:
+    "images/Claire/claire sleepy.png"
+    claire_zoom
+image claire sleepy2:
+    "images/Claire/claire sleepy2.png"
+    claire_zoom
+image claire smile:
+    "images/Claire/claire smile.png"
+    claire_zoom
+image claire smile2:
+    "images/Claire/claire smile2.png"
+    claire_zoom
+image claire smug:
+    "images/Claire/claire smug.png"
+    claire_zoom
+image claire smug2:
+    "images/Claire/claire smug2.png"
+    claire_zoom
 
 label start:
-    jump choices
+    jump tutorial
