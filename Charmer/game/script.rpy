@@ -1,11 +1,17 @@
 ﻿default charm = 0
 define athena = Character("Athena", color="#F4839F")
+define chad_unknown = Character("???", color="#903A4D")
 define chad = Character("Chad", color="#903A4D")
 define ellie = Character("Ellie", color="#3b3545")
 define may = Character("May", color="#3d3a59")
 
 define claire_unknown = Character("???", color="#A65A4C")
 define claire = Character("Claire", color="#A65A4C")
+
+default chad_approval = 20
+default ellie_approval = 20
+default may_approval = 20
+default athena_approval = 20
 
 transform default_zoom:
     zoom 0.75
@@ -215,4 +221,4 @@ image charms4:
 
 label start:
     default name = "Ariel"
-    jump chmsq
+    jump chad
