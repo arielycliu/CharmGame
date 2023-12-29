@@ -11,31 +11,31 @@ label chad:
     mc "Uh... what are you doing in there?"
 
     show chad shocked
-    chad_unknown "Oh, I didn't see you there. I was thinking of baking a chocolate souffle to impress you but I couldn't find your eggs."
+    chad_unknown "Oh, I didn't see you there. I was thinking of baking a chocolate soufflé to impress you but I couldn't find your eggs."
     
     "I take a look at the contents of my fridge, scanning for eggs."
 
     show chad normal
     mc "Hm, I think I used up all of them making deviled eggs."
 
-    mc "Is there anything else you could make with what is left in my fridge?"
+    mc "Is there anything else you could make with what's left in my fridge?"
 
     "What am I saying?"
 
-    "They aren't my maid!"
+    "They're not my maid!"
 
-    mc "Sorry, I didn't mean it to sound like a request."
+    mc "Sorry, I didn't mean for it to sound like a request."
 
     show chad delighted
     chad_unknown "No, don't worry about it. I can tell you're feeling a bit peckish, and I'm happy to assist anyone, especially someone as charming as yourself."
 
     "I feel myself blushing just a bit."
 
-    "I see them turn around and start to boil water. "
+    "They turn around and start boiling some water."
 
-    "Once the water boils, they drop in the pasta and while that is cooking, he prepares a quick sauce of olive oil, garlic, basil, and canned tomatoes."
+    "Once the water boils, they drop in the pasta and while that is cooking, they prepare a quick sauce of olive oil, garlic, basil, and canned tomatoes."
 
-    "He combines the sauce with the spaghetti, seasons it with salt and pepper, and plates it beautifully."
+    "They combine the sauce with the spaghetti, season it with salt and pepper, and plate it beautifully."
 
     hide chad delighted
 
@@ -47,10 +47,10 @@ label chad:
     show bg kitchen
     with Dissolve(0.5)
 
-    "While I'm slurping down the pasta, they pulls out a chair and sit down next to me."
+    "While I'm slurping down the pasta, they pull out a chair and sit down next to me."
 
     show chad smile
-    chad "I don't think we've meet formally before, my name is Chad"
+    chad_unknown "I don't think we've met formally before, my name is Chad"
 
     show chad blush
     chad "I heard a bit about you from Claire. Your name is [name] right? You're even prettier in person - Claire's photo doesn't do you justice."
