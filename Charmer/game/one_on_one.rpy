@@ -182,7 +182,7 @@ label chad_question_1:
     show screen bars
     show chad normal
 
-    play music "chad.mp3" fadein 1.0
+    play music "<loop 1.564>chad.mp3" fadein 1.0
 
     chad "Oh, hey, [name]."
     chad "What happened to the lights just now?"

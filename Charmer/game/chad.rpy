@@ -1,7 +1,7 @@
 label chad:
     scene bg kitchen
     show screen bars
-    play music "chad.mp3" fadein 1.0 fadeout 1.0
+    play music "<loop 1.564>chad.mp3" fadein 1.0 fadeout 1.0
 
     "I know the party just started but I'm so nervous that my insides feel like they're in knots."
 

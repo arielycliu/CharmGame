@@ -11,6 +11,7 @@ label tutorial:
     $ athena_stayed = True
 
     scene bg livingroom
+    stop music fadeout 1.0
     play music "claire.mp3" fadein 1.0
 
     python:
@@ -18,7 +19,7 @@ label tutorial:
         name = name.strip() or "Charmer"
 
     define mc = Character("[name]", color="#4378a9")
-    
+
     claire_unknown "Hey! You!"
 
     "I scan my surroundings, but there's no one out here. The party attendees seem to be momentarily elsewhere."
@@ -31,21 +32,21 @@ label tutorial:
 
     "I turn around."
 
-    show claire smile 
+    show claire smile
 
     claire "It's me!"
 
-    show claire smile 
+    show claire smile
     "Claire gives me a little jazz-hand wave. She's been helping me with the preparations for this party, but to be honest, I thought she'd gone home already. She already has a date, so there's really no need for her to stick around."
 
     "I guess I've been a little zoned out, worrying about this."
 
-    show claire delighted 
+    show claire delighted
     claire "You've done a good job setting all this up, [name]. Now let's hope that it pays off."
 
     mc "Yeah, let's hope so. I can't show up to the New Year's Gala without a date. The others would..."
 
-    show claire normal 
+    show claire normal
     claire "Hey, look, don't worry about that now. You've got four people right over there, just waiting to get to know you."
 
     show claire annoyed
@@ -66,12 +67,12 @@ label tutorial:
         claire "Wow, just rearing to go, huh? Well, don't let me stop you then."
 
         show screen bars
-        
+
         $ charm = 0
-        
+
         show claire delighted
         claire "Remember to save your charm for when you really need it, and have fun out there!"
-        
+
         jump claire_leave
     label noidea:
         show claire delighted2
@@ -93,7 +94,7 @@ label tutorial:
         claire "The really important thing to do here is to make sure that you use your CHARM wisely."
 
         show screen bars
-        
+
         $ charm = 0
         "I take a look at the top left corner of my screen. I guess she's talking about that pink bar with the heart on it."
 
@@ -133,7 +134,7 @@ label tutorial:
         claire "That's really about it."
 
         jump claire_leave
-    
+
     label claire_leave:
         show claire smile
         claire "Oh, wait - before you go, I've got something to give you."
@@ -176,7 +177,7 @@ label tutorial:
 
         show claire smile2
         claire "Now do it. Don't make me ask again."
-    
+
         play sound "audio/charm-sound.wav"
         while charm < 50:
             $ charm += 1
@@ -187,11 +188,10 @@ label tutorial:
 
         show claire delighted
         claire "Looks like it's kicking in."
-        
+
         claire "I'll leave you alone to go hit up your targets then, [name]."
 
         show claire delighted2
         claire "Best of luck!"
 
     jump chad
-
