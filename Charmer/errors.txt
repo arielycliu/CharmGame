@@ -2,11 +2,17 @@
 errors listed below, and try again.
 
 
-The label ellie_win is defined twice, at File "game/one_on_one.rpy", line 111:
-label ellie_win:
-and File "game/one_on_one.rpy", line 224:
-label ellie_win:
+File "game/script.rpy", line 236: expected statement.
+    <<<<<<< HEAD
+                ^
 
+File "game/script.rpy", line 240: expected statement.
+    =======
+          ^
+
+File "game/script.rpy", line 244: expected statement.
+    >>>>>>> 23f88460bdc7412e77dc933c0b81910ddd8bac7f
+                                                    ^
 
 Ren'Py Version: Ren'Py 8.1.3.23091805
-Sat Dec 30 03:17:34 2023
+Sat Dec 30 03:56:07 2023
