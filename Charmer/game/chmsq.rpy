@@ -29,6 +29,7 @@ label chmsq:
         mc "Well that went about as well as I expected."
         mc "I guess I'll try and get [choices[0]] to go with me."
         $ chosen_one = choices[0]
+        jump after_charm
     else:
         mc "Well that went better than I expected."
         mc "I can only take one of them as my date though."
@@ -36,7 +37,10 @@ label chmsq:
         "Who should I take?"
         call screen choseone
         $ chosen_one = _return
-        "[chosen_one]"
+
+        mc "Got it, I'll take [chosen_one]"
+    
+    jump chmsq_start
 
 
 label chmsq_start:
@@ -343,7 +347,7 @@ label athena_charm:
 label after_charm:
     scene bg hallway night
     show screen bars
-    mc "Great, now I have [charm] charm points"
+    mc "Right now I have [charm] charm points"
 
     mc "I hope I have enough to woo [chosen_one]"
 
