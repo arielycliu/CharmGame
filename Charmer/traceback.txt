@@ -1,27 +1,25 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/chmsq.rpy", line 36, in script
-    call screen choseone
+  File "game/chmsq.rpy", line 26, in script
+    call screen game_over
   File "renpy/common/000statements.rpy", line 670, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/choseone.rpy", line 14, in execute
-    screen choseone():
-  File "game/choseone.rpy", line 14, in execute
-    screen choseone():
-  File "game/choseone.rpy", line 15, in execute
-    vbox spacing 50:
-  File "game/choseone.rpy", line 16, in execute
-    $ choices = generate_choices()
-  File "game/choseone.rpy", line 16, in <module>
-    $ choices = generate_choices()
-TypeError: generate_choices() missing 4 required positional arguments: 'ellie_stayed', 'chad_stayed', 'may_stayed', and 'athena_stayed'
+  File "game/game_over.rpy", line 28, in execute
+    screen game_over():
+  File "game/game_over.rpy", line 28, in execute
+    screen game_over():
+  File "game/game_over.rpy", line 29, in execute
+    frame:
+  File "game/game_over.rpy", line 30, in execute
+    vbox spacing 100:
+Exception: Style 'restart_box' does not exist.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/chmsq.rpy", line 36, in script
-    call screen choseone
+  File "game/chmsq.rpy", line 26, in script
+    call screen game_over
   File "C:\Users\ariel\Downloads\renpy-8.1.3-sdk\renpy\ast.py", line 2259, in execute
     self.call("execute")
   File "C:\Users\ariel\Downloads\renpy-8.1.3-sdk\renpy\ast.py", line 2241, in call
@@ -52,19 +50,24 @@ Full traceback:
     self.update()
   File "C:\Users\ariel\Downloads\renpy-8.1.3-sdk\renpy\display\screen.py", line 680, in update
     self.screen.function(**self.scope)
-  File "game/choseone.rpy", line 14, in execute
-    screen choseone():
-  File "game/choseone.rpy", line 14, in execute
-    screen choseone():
-  File "game/choseone.rpy", line 15, in execute
-    vbox spacing 50:
-  File "game/choseone.rpy", line 16, in execute
-    $ choices = generate_choices()
-  File "game/choseone.rpy", line 16, in <module>
-    $ choices = generate_choices()
-TypeError: generate_choices() missing 4 required positional arguments: 'ellie_stayed', 'chad_stayed', 'may_stayed', and 'athena_stayed'
+  File "game/game_over.rpy", line 28, in execute
+    screen game_over():
+  File "game/game_over.rpy", line 28, in execute
+    screen game_over():
+  File "game/game_over.rpy", line 29, in execute
+    frame:
+  File "game/game_over.rpy", line 30, in execute
+    vbox spacing 100:
+  File "C:\Users\ariel\Downloads\renpy-8.1.3-sdk\renpy\display\layout.py", line 639, in __init__
+    self._clipping = self.style.clipping
+  File "gen3-static/styleclass.pxi", line 189, in renpy.styledata.styleclass.Style.clipping.__get__
+  File "style.pyx", line 493, in renpy.style.StyleCore._get
+  File "style.pyx", line 679, in renpy.style.build_style
+  File "style.pyx", line 142, in renpy.style.get_full_style
+  File "style.pyx", line 98, in renpy.style.get_style
+Exception: Style 'restart_box' does not exist.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.1.3.23091805
 Charmer 1.0
-Fri Dec 29 23:36:40 2023
+Fri Dec 29 23:58:39 2023
