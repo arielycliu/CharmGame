@@ -4,7 +4,7 @@ label ellie:
     
     "I slip into the hallway to take a moment to gather myself. Claire was right - these conversations do take up a lot of energy. I've only just gotten started, though, so I can't afford to take a break now."
 
-    "I already caught loads of flak from the head succubi at last year's gala."
+    "I already caught loads of flak from the head succubus at last year's gala."
 
     "\"So many desperate people in th\' world, an\' y\' still ain\'t got a date? It\'s like y\' ain\'t even tryin\', darlin\'.\""
 
@@ -17,7 +17,7 @@ label ellie:
 
     "She looks like she's waiting for me to say something."
 
-    mc "Huh? Yeah, I am."
+    mc "Huh? Yeah, I'm fine."
 
     "I put on my shiniest smile."
 
@@ -67,7 +67,7 @@ label ellie:
         ellie "Plus, none of my friends call me that."
 
         show ellie vneutral
-        ellie "So seriously, please, I'd rather you call Ellie."
+        ellie "So seriously, please, I'd rather you call me Ellie."
 
         "She looks pretty uncomfortable. Maybe I shouldn't have brought it up."
 
@@ -242,7 +242,7 @@ label dickens_merge:
 
         ellie "The embroidery is gorgeous. Look at these peonies!"
 
-        "Before I can answer, she's moving on."
+        "Before I can answer, she moves on."
 
         jump look_merge
         
@@ -513,7 +513,7 @@ label random_merge:
 
     if charm >= 10:
         menu:
-            "Oh. You laugh at your own jokes, Ellie.":
+            "Oh, you laugh at your own jokes?":
                 $ ellie_approval -= 5
                 if ellie_approval <= 0:
                     jump ellie_leaves
@@ -535,7 +535,7 @@ label random_merge:
                 jump laugh_3
     else:
         menu:
-            "Oh. You laugh at your own jokes, Ellie.":
+            "Oh, you laugh at your own jokes?":
                 $ ellie_approval -= 5
                 if ellie_approval <= 0:
                     jump ellie_leaves
@@ -577,7 +577,7 @@ label random_merge:
         ellie "Even my friends have made fun of me for it."
 
         show ellie happy
-        ellie "So it's nice to know that someone likes how I look when I do smile."
+        ellie "So it's nice to know that someone likes how I look when I smile."
 
         ellie "I wish I could smile more often, without people making fun of me."
 
@@ -600,7 +600,7 @@ label laugh_merge:
 
     ellie "I think we've been talking for a quite a while."
 
-    ellie "Just come back to see me when you're done, all right?"
+    ellie "Just come back to see me when you're done, alright?"
 
     show ellie happy
     ellie "I had fun talking to you tonight, [name]."

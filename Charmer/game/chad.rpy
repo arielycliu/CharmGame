@@ -2,7 +2,7 @@ label chad:
     scene bg kitchen
     show screen bars
 
-    "I know the party just started but I'm so nervous that my intestines feel like they're in knots."
+    "I know the party just started but I'm so nervous that my insides feel like they're in knots."
 
     "I decide to head to the kitchen, hoping that filling my stomach with something will get it to stop doing backflips."
 
@@ -20,7 +20,7 @@ label chad:
 
     mc "Is there anything else you could make with what's left in my fridge?"
 
-    "What am I saying?"
+    "Wait, what am I saying?"
 
     "They're not my maid!"
 
@@ -33,7 +33,7 @@ label chad:
 
     "They turn around and start boiling some water."
 
-    "Once the water boils, they drop in the pasta. While that's cooking, they prepare a quick sauce of olive oil, garlic, basil, and canned tomatoes."
+    "Once the water boils, they drop in the pasta. While it's cooking, they prepare a quick sauce of olive oil, garlic, basil, and canned tomatoes."
 
     "They combine the sauce with the spaghetti, season it with salt and pepper, and plate it beautifully."
 
@@ -61,7 +61,7 @@ label chad:
             "If you keep this up, I think I'll like you too much. (-15 Charm)":
                 $ chad_approval += 0
                 $ charm_start = charm
-                while charm > charm_start - 10: # decrease charm bar
+                while charm > charm_start - 15: # decrease charm bar
                     $ charm -= 1
                     pause(0.0001)
                 jump photo_1
@@ -70,7 +70,7 @@ label chad:
                 if chad_approval <= 0:
                     jump chad_leaves
                 jump photo_2
-            "Your name is Chad right? That's a stupid name for a girl.":
+            "Chad? That's a stupid name for a girl.":
                 $ chad_approval -= 20
                 # don't leave yet give mc another chance
                 jump photo_3
@@ -82,15 +82,14 @@ label chad:
                 if chad_approval <= 0:
                     jump chad_leaves
                 jump photo_2
-            "Your name is Chad right? That's a stupid name for a girl.":
+            "Chad? That's a stupid name for a girl.":
                 $ chad_approval -= 20
                 jump photo_3
     
     label photo_1:
         "Whoa, I don't even sound like myself. I better thank Claire properly later for the charms."
         show chad shocked
-        chad "Ha, bold. Not that I don't like it."
-        chad "I kinda like it..."
+        chad "Ha, bold. I kinda like it..."
         jump photo_merge
 
     label photo_2:
@@ -149,7 +148,7 @@ label photo_merge:
 
 label chad_truthordare:
     chad "Alright! Truth or dare?"
-    mc "Truth. (Dares are intimidating.)"
+    mc "Truth (Dares are intimidating)."
     chad "What do you like the most about me?"
     menu:
         "What do you like the most about Chad?"
@@ -158,7 +157,7 @@ label chad_truthordare:
             $ chad_approval -= 5
             if chad_approval <= 0:
                 jump chad_leaves
-            chad "Aww you're so sweet"
+            chad "Aww you're so sweet."
         "Voice":
             show chad shocked
             chad "Really? I'm quite insecure about my voice so it's nice to hear that."
@@ -167,7 +166,7 @@ label chad_truthordare:
             $ chad_approval -= 5
             if chad_approval <= 0:
                 jump chad_leaves
-            chad "Aww you're so sweet"
+            chad "Aww you're so sweet."
 
     show chad normal
     mc "Your turn - Truth or Dare?"
@@ -186,7 +185,7 @@ label chad_truthordare:
             jump chad_hobbies
         "What's your biggest pet peeve?":
             show chad sleepy
-            chad "Hmm... I guess being called not masculine enough. "
+            chad "Hmm... I guess being told that I'm not masculine enough."
 
             show chad angry
             chad "I look like a girl and have some more feminine hobbies, so some people think it's okay to say I'm not a man."
@@ -196,7 +195,7 @@ label chad_hobbies:
     show chad normal
     mc "So what kind of hobbies do you enjoy?"
     chad "Why don't you take a guess first? That'll make it more interesting."
-    mc "Sure. That pasta you cooked for me was delicious, and you were trying to bake me a chocolate souffle so I think you enjoy cooking."
+    mc "Sure. That pasta you cooked for me was delicious, and you were trying to bake me a chocolate soufflé so I think you enjoy cooking."
     show chad smile2
     chad "Quite the detective aren't you? Well you'd be correct - I like to cook and I can also bake a few things."
     mc "I'm a bit jealous, I don't mind cooking but I'm not great at it. If only I could eat your food everyday."
@@ -217,7 +216,7 @@ label chad_hobbies:
             "Would you like to move in with me? (-10 charm)":
                 
                 $ charm_start = charm
-                while charm > charm_start - 5:
+                while charm > charm_start - 10:
                     $ charm -= 1
                     pause(0.0001)
 
