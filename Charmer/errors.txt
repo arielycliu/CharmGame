@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/may.rpy", line 163: Menu does not contain any choices.
-    menu:
-         ^
+File "game/may.rpy", line 165: choice menuitem expects a non-empty block.
+    "Arcade games (-10 charm)":
+                               ^
 
 Ren'Py Version: Ren'Py 8.1.3.23091805
-Fri Dec 29 21:27:46 2023
+Fri Dec 29 21:31:53 2023

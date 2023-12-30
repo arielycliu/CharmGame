@@ -152,18 +152,66 @@ label may:
             show may sweat
             may "Oh maybe we could go on another type of date then."
         "No.":
-            $ may_approval -= 12
+            $ may_approval -= 10
             if may_approval <= 0:
                 jump may_leaves
             show may sweat
             may "Oh that's okay. Maybe we could go on a date someplace else."
 
-    may "Speaking of dates, do you have any favorite activities or places you enjoy?"
+    may "Speaking of dates, do you have any ideas on where you'd take me on a date?"
 
-    menu:
-        "Arcade games"
+    if charm >= 10:
+        menu:
+            "Arcade games (-10 charm)":
+                $ charm_start = charm
+                while charm > charm_start - 10:
+                    $ charm -= 1
+                    pause(0.0001)
+                $ may_approval -= 3
+                if may_approval <= 0:
+                    jump may_leaves
+                show may laugh
+                may "I'd love that."
+            "Whale-watching":
+                show may smile3
+                may "No way, how'd you know - I love that."
+                may "I love orcas, their coordination and teamwork is really awe-inspiring."
 
-    mc "It's been great getting to know you May."
+                show may normal
+                may "Have you ever gone whale watching before?"
+                mc "Not yet, but it's on my bucket list. I imagine it's a breathtaking experience."
+
+                show may smile3
+                may "It truly is. We should plan a whale-watching trip together sometime."
+                mc "I'd love that, count me in!"
+            "Karaoke":
+                $ may_approval -= 13
+                if may_approval <= 0:
+                    jump may_leaves
+                show may sweat
+                may "Haha, my voice isn't the greatest. Maybe next time!"
+    else:
+        menu:
+            "Whale-watching":
+                show may smile3
+                may "No way, how'd you know - I would love that."
+                may "I love orcas, their coordination and teamwork is really awe-inspiring."
+
+                show may normal
+                may "Have you ever gone whale watching before?"
+                mc "Not yet, but it's on my bucket list. I imagine it's a breathtaking experience."
+
+                show may smile3
+                may "It truly is. We should plan a whale-watching trip together sometime."
+                mc "I'd love that, count me in!"
+            "Karaoke":
+                $ may_approval -= 13
+                if may_approval <= 0:
+                    jump may_leaves
+                show may sweat
+                may "Haha, my voice isn't the greatest. Maybe next time!"
+
+    mc "I'm glad we have a lot of exciting plans ahead May."
 
     may "Likewise! If you ever want to chat more about games or anything else, then hit me up. I'm always up for a good conversation with you."
 
