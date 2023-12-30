@@ -1,4 +1,6 @@
-default FIRST_CHARM_COST = 10
+default CHARM_COST_1 = 10
+default CHARM_COST_2 = 20
+default CHARM_COST_3 = 30
 
 label one_on_one:
     scene bg hallway
@@ -35,25 +37,69 @@ label ellie_question_1:
 
     menu:
         "There were so many other pretty people at the party today, maybe you should go with one of them instead..."
-        "Yeah but none of them are as thoughtful and observant as you. (-[FIRST_CHARM_COST] Charm)" if charm >= FIRST_CHARM_COST:
+        "Yeah but none of them are as thoughtful and observant as you. (-[CHARM_COST_1] Charm)" if charm >= CHARM_COST_1:
             $ charm_start = charm
-            while charm > charm_start - FIRST_CHARM_COST: # decrease charm bar
+            while charm > charm_start - CHARM_COST_1: # decrease charm bar
                 $ charm -= 1
                 pause(0.0001)
+            show ellie shy
+            ellie "Aww that's so sweet of you."
             jump ellie_question_2
-        "Yeah but none of them are as good of a cook as you. (-[FIRST_CHARM_COST] Charm)" if charm >= FIRST_CHARM_COST:
+        "Yeah but none of them are as good of a cook as you. (-[CHARM_COST_1] Charm)" if charm >= CHARM_COST_1:
             $ charm_start = charm
-            while charm > charm_start - FIRST_CHARM_COST: # decrease charm bar
+            while charm > charm_start - CHARM_COST_1: # decrease charm bar
                 $ charm -= 1
                 pause(0.0001)
             show ellie confused
             ellie "Huh?"
             ellie "I never said anything about being a good cook..."
             jump ellie_fail
+        "Yeah maybe you're right.":
+            jump ellie_fail
         
 label ellie_question_2:
-    "Good job"
-    jump ellie_question_3
+    menu:
+        "question 2"
+        "something orca (-[CHARM_COST_2] Charm)" if charm >= CHARM_COST_2:
+            $ charm_start = charm
+            while charm > charm_start - CHARM_COST_2: # decrease charm bar
+                $ charm -= 1
+                pause(0.0001)
+            jump ellie_fail
+        "something cuttlefish (-[CHARM_COST_2] Charm)" if charm >= CHARM_COST_2:
+            $ charm_start = charm
+            while charm > charm_start - CHARM_COST_2: # decrease charm bar
+                $ charm -= 1
+                pause(0.0001)
+            jump ellie_question_3
+        "fail":
+            jump ellie_fail
+
+label ellie_question_3:
+    menu:
+        "question 3"
+        "I'd love to go with you, Ellie. (-[CHARM_COST_3] Charm)" if charm >= CHARM_COST_3:
+            $ charm_start = charm
+            while charm > charm_start - CHARM_COST_3: # decrease charm bar
+                $ charm -= 1
+                pause(0.0001)
+            jump ellie_win
+        "I'd love to go with you, Eleanor. (-[CHARM_COST_3] Charm)" if charm >= CHARM_COST_3:
+            $ charm_start = charm
+            while charm > charm_start - CHARM_COST_3: # decrease charm bar
+                $ charm -= 1
+                pause(0.0001)
+            jump ellie_fail
+        "fail":
+            jump ellie_fail
+
+label ellie_win:
+    show ellie happy
+    ellie "win"
+    hide ellie happy
+    with Dissolve(0.5)
+
+    call screen game_won
 
 label ellie_fail:
     show ellie vneutral
@@ -66,11 +112,3 @@ label ellie_fail:
     with Dissolve(0.5)
 
     call screen game_over
-
-label ellie_question_3:
-    "dsklfj"
-
-    hide ellie smug
-    with Dissolve(0.5)
-
-    call screen game_won
