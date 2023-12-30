@@ -23,33 +23,48 @@ label ellie_question_1:
     scene bg hallway
     show screen bars
     show ellie happy
+    play "ellie.mp3" fadein 1.0
 
-    ellie "Oh there you are [name]."
-    ellie "What happened to the lights just now? That was kinda scary..."
+    ellie "Oh, there you are, [name]."
+
+    show ellie vneutral
+    ellie "What happened to the lights just now? That was sort of scary..."
 
     mc "Must've been a power outage or something."
+    mc "It's okay. You don't need to worry about that."
+    mc "At any rate, it's fixed now."
+
+    show ellie neutral
     mc "Anyway, Ellie, I've been meaning to ask you something."
-    mc "There's this big New Year's gala coming up, and I was wondering if... you'd like to be my date?"
+    mc "There's this big New Year's gala coming up that I have to attend, and I was wondering if..."
+    mc "You'd like to be my date?"
 
     show ellie shy
     ellie "Oh!"
     ellie "I mean-"
     ellie "Are you sure?"
-    show ellie sad
-    ellie "There were so many other pretty people at the party today, maybe you should go with one of them instead..."
+    show ellie vneutral
+    ellie "There were so many other lovely people at the party today."
+    ellie "Don't you want to go with one of them, instead?"
+
+    show ellie neutral
+    ellie "Of course I want to go with you."
+    ellie "But I don't want you to make a decision you'll regret, and I don't know if I'm the best person to go with you."
 
     menu:
-        "There were so many other pretty people at the party today, maybe you should go with one of them instead..."
-        "Yeah but none of them are as thoughtful and observant as you. (-[CHARM_COST_1] Charm)" if charm >= CHARM_COST_1:
+        ellie "But I don't want you to make a decision you'll regret, and I don't know if I'm the best person to go with you."
+
+        "Yeah, but none of them are as thoughtful and observant as you. (-[CHARM_COST_1] Charm)" if charm >= CHARM_COST_1:
             play sound "audio/charm-sound.wav"
             $ charm_start = charm
             while charm > charm_start - CHARM_COST_1: # decrease charm bar
                 $ charm -= 1
                 pause(0.0001)
             show ellie shy
-            ellie "Aww that's so sweet of you."
+            ellie "Oh..."
+            ellie "That's so sweet of you."
             jump ellie_question_2
-        "Yeah but none of them are as good of a cook as you. (-[CHARM_COST_1] Charm)" if charm >= CHARM_COST_1:
+        "Yeah, but none of them are as good of a cook as you. (-[CHARM_COST_1] Charm)" if charm >= CHARM_COST_1:
             play sound "audio/charm-sound.wav"
             $ charm_start = charm
             while charm > charm_start - CHARM_COST_1: # decrease charm bar
@@ -59,40 +74,68 @@ label ellie_question_1:
             ellie "Huh?"
             ellie "I never said anything about being a good cook..."
             jump ellie_fail
-        "Yeah maybe you're right.":
+        "Yeah, maybe you're right.":
             jump ellie_fail
         
 label ellie_question_2:
-    mc "Hey it'll be fun. I'll even buy a plushie for you."
-    ellie "You would? What kind of plushie would you buy?"
+    mc "Of course."
+    mc "I can promise it'll be good fun."
+    mc "And I hope it's not an imposition, but I even have a dress in mind for you."
+
+    show ellie delighted
+    ellie "You do?"
+    ellie "I can't believe you thought this through so much."
+
+    show ellie shy
+    ellie "That'd be incredible, if it doesn't mean you're spending too much on me. I couldn't have that."
+
+    ellie "What kind of dress are you thinking of?"
     menu:
-        ellie "You would? What kind of plushie would you buy?"
-        "an orca one (-[CHARM_COST_2] Charm)" if charm >= CHARM_COST_2:
+        ellie "What kind of dress are you thinking of?"
+
+        "One that looks like an orca. (-[CHARM_COST_2] Charm)" if charm >= CHARM_COST_2:
             play sound "audio/charm-sound.wav"
             $ charm_start = charm
             while charm > charm_start - CHARM_COST_2: # decrease charm bar
                 $ charm -= 1
                 pause(0.0001)
             show ellie disappointed
-            ellie "An orca...I think they are kind of scary"
+            ellie "An orca..."
+            ellie "I think they're kind of scary, actually."
             jump ellie_fail
-        "a cuttlefish one (-[CHARM_COST_2] Charm)" if charm >= CHARM_COST_2:
+        "One that looks like a cuttlefish. (-[CHARM_COST_2] Charm)" if charm >= CHARM_COST_2:
             play sound "audio/charm-sound.wav"
             $ charm_start = charm
             while charm > charm_start - CHARM_COST_2: # decrease charm bar
                 $ charm -= 1
                 pause(0.0001)
-            ellie "Aww... you even remembered my favourite animal."
+            
+            show ellie happy
+            ellie "Aww..."
+            ellie "You even remembered my favourite animal."
             jump ellie_question_3
-        "a skull design":
+        "A hot pink pantsuit.":
             show ellie disappointed
-            ellie "A skull huh? That's interesting"
+            ellie "A skull, huh?"
+
+            show ellie confused
+            ellie "Sorry to say this, but I just wanted to let you know..."
+            ellie "I'm not sure a pantsuit is a dress, actually."
             jump ellie_fail
 
 label ellie_question_3:
+    show ellie shy
     ellie "Am I dreaming? This doesn't feel real."
+
+    ellie "I've never been to a big party before."
+
+    ellie "Much less a gala."
+
+    mc "I promise you it is..."
+
     menu:
         mc "I promise you it is..."
+
         "I'd love to go with you, Ellie. (-[CHARM_COST_3] Charm)" if charm >= CHARM_COST_3:
             play sound "audio/charm-sound.wav"
             $ charm_start = charm
@@ -107,12 +150,14 @@ label ellie_question_3:
                 $ charm -= 1
                 pause(0.0001)
             jump ellie_fail
-        "haha...just kidding!":
+        "Haha... Only kidding! I've been kicked out of all the local galas.'":
             jump ellie_fail
 
 label ellie_win:
     show ellie happy
-    ellie "I'd love to go with you too [name]!"
+    ellie "I'd love to go with you too, [name]!"
+    ellie ""
+    ellie "Let's have "
     hide ellie happy
     with Dissolve(0.5)
 
@@ -123,7 +168,7 @@ label ellie_fail:
     ellie "Sorry [name], maybe I shouldn't go to the gala with you after all."
     show ellie smug
     ellie "Especially since it seems like we barely know each other..."
-    ellie "Thanks for organizing this party and everything though."
+    ellie "Thanks for organizing this party and everything, though."
     
     hide ellie smug
     with Dissolve(0.5)
@@ -137,12 +182,16 @@ label chad_question_1:
     show screen bars
     show chad normal
 
-    chad "Oh hey [name]."
+    chad "Oh, hey, [name]."
     chad "What happened to the lights just now?"
 
-    mc "Probably just a small power outage, I wouldn't worry about it."
+    mc "Must've been a power outage or something."
+    mc "Pretty weird. That never really happens."
+    mc "At any rate, it's fixed now."
+
     mc "Anyway, Chad, I've been meaning to ask you something."
-    mc "There's this big New Year's gala coming up, and I was wondering if... you'd like to be my date?"
+    mc "There's this big New Year's gala coming up that I have to attend, and I was wondering if..."
+    mc "You'd like to be my date?"
 
     show chad blush
     chad "Oh!"
@@ -150,11 +199,12 @@ label chad_question_1:
 
     show chad laugh
     chad "Will there be good food there?"
+    chad "Good food and good company's all I need for a lovely night."
 
-    mc "Every year there's always a good selection of food."
+    mc "Every year, there's always a wonderful selection of food."
 
     menu:
-        mc "Every year there's always a good selection of food."
+        mc "Every year, there's always a wonderful selection of food."
         "But I'm sure nothing could top your sushi. (-[CHARM_COST_1] Charm)" if charm >= CHARM_COST_1:
             play sound "audio/charm-sound.wav"
             $ charm_start = charm
@@ -162,7 +212,8 @@ label chad_question_1:
                 $ charm -= 1
                 pause(0.0001)
             show chad normal
-            chad "What are you talking about? I've never made you sushi?"
+            chad "Huh?"
+            chad "What are you talking about? I've never made you sushi."
             jump chad_fail
         "But I'm sure nothing could top your pasta dish. (-[CHARM_COST_1] Charm)" if charm >= CHARM_COST_1:
             play sound "audio/charm-sound.wav"
@@ -175,17 +226,21 @@ label chad_question_1:
             jump chad_question_2
         "It's bound to be better than your cooking.":
             show chad normal
-            chad "Wow, I didn't expect you to be this kind of person."
+            chad "That's..."
+            chad "Wow."
+            chad "I didn't expect you to be that kind of person."
             jump chad_fail
         
 label chad_question_2:
     show chad smile
-    chad "Hmm... I'm interested. Will there be any fun things to do at the party?"
+    chad "Well, consider me interested. Will there be any fun things to do at the party?"
 
-    mc "There'll be all kinds of fun games, I know you like..."
+    mc "There'll be all kinds of fun games!"
+    
+    mc "I know you like..."
 
     menu:
-        mc "There'll be all kinds of fun games, I know you like..."
+        mc "I know you like..."
         "Never have I ever. (-[CHARM_COST_2] Charm)" if charm >= CHARM_COST_2:
             play sound "audio/charm-sound.wav"
             $ charm_start = charm
@@ -194,24 +249,30 @@ label chad_question_2:
                 pause(0.0001)
             show chad normal
             chad "Never have I ever mentioned that - I actually don't like that game at all."
+            chad "It's pretty boring, to be honest."
             jump chad_fail
-        "Truth or Dare. (-[CHARM_COST_2] Charm)" if charm >= CHARM_COST_2:
+        "Truth or dare. (-[CHARM_COST_2] Charm)" if charm >= CHARM_COST_2:
             play sound "audio/charm-sound.wav"
             $ charm_start = charm
             while charm > charm_start - CHARM_COST_2: # decrease charm bar
                 $ charm -= 1
                 pause(0.0001)
-            chad "I'm glad you remembered! Sounds like it'll be a fun night."
+            chad "Heck yeah, I do! Sounds like it'll be a fun night."
             jump chad_question_3
         "Shattering wine glasses.":
             show chad angry
+            chad "What is that supposed to mean?"
             chad "That doesn't sound like my idea of fun at all."
             jump chad_fail
 
 label chad_question_3:
-    chad "I'm down to go. What should I wear?"
+    chad "I'm down to go."
+    
+    chad "On such short notice, though..."
+    chad "What should I wear?"
+
     menu:
-        chad "I'm down to go. What should I wear?"
+        chad "What should I wear?"
         "A girl like you would look beautiful in a dress. (-[CHARM_COST_3] Charm)" if charm >= CHARM_COST_3:
             play sound "audio/charm-sound.wav"
             $ charm_start = charm
@@ -219,9 +280,13 @@ label chad_question_3:
                 $ charm -= 1
                 pause(0.0001)
             show chad angry
-            chad "I'm not a girl, and I don't like the way you said that [name]."
+            chad "I'm."
+            chad "Not."
+            chad "A." 
+            chad "Girl."
+            chad "And I don't like the way you said that, [name]."
             jump chad_fail
-        "I think you'd look so charming in a suit. (-[CHARM_COST_3] Charm)" if charm >= CHARM_COST_3:
+        "I think you'd look charming in a suit. (-[CHARM_COST_3] Charm)" if charm >= CHARM_COST_3:
             play sound "audio/charm-sound.wav"
             $ charm_start = charm
             while charm > charm_start - CHARM_COST_3: # decrease charm bar
@@ -233,7 +298,9 @@ label chad_question_3:
 
 label chad_win:
     show chad delighted
-    chad "Sounds delightful, I'd love to go with you to the party!"
+    chad "Keep it simple. Makes sense."
+    
+    chad "That sounds delightful. I'd love to go with you to the party!"
     hide chad delighted
     with Dissolve(0.5)
     call screen game_won
@@ -254,26 +321,32 @@ label may_question_1:
     show screen bars
     
     show may smile1
-    may "It's good to see you [name]."
+    may "It's good to see you, [name]."
     show may normal
     may "What happened to the lights just now?"
 
-    mc "Probably just a small power outage, I wouldn't worry about it."
-    mc "Anyway, may, I've been meaning to ask you something."
-    mc "There's this big New Year's gala coming up, and I was wondering if... you'd like to be my date?"
+    mc "Must've been a power outage or something."
+    mc "It's okay. It's not really a big deal."
+    mc "At any rate, it's fixed now."
+
+    mc "Anyway, May, I've been meaning to ask you something."
+    mc "There's this big New Year's gala coming up that I have to attend, and I was wondering if..."
+    mc "You'd like to be my date?"
 
     show may laugh
     may "Oh!"
     may "I mean-"
 
     show may laugh
+    may "I can get pretty busy around this time of year, but I'd be interested."
     may "Will there be something fun to do there?"
-    mc "Every year they host a bunch of fun competitions."
 
-    mc "This year they're hosting a..."
+    mc "Of course. Every year, they host a bunch of cool competitions."
+
+    mc "This year, they're hosting a..."
 
     menu:
-        mc "This year they're hosting a..."
+        mc "This year, they're hosting a..."
         "gaming competition. (-[CHARM_COST_1] Charm)" if charm >= CHARM_COST_1:
             play sound "audio/charm-sound.wav"
             $ charm_start = charm
@@ -281,7 +354,9 @@ label may_question_1:
                 $ charm -= 1
                 pause(0.0001)
             show may smirk
-            may "Ohhh sounds fun, what game?"
+            may "Oh, now that sounds like fun."
+            
+            may "What game?"
             jump may_question_2
         "rowing competition. (-[CHARM_COST_1] Charm)" if charm >= CHARM_COST_1:
             play sound "audio/charm-sound.wav"
@@ -290,11 +365,11 @@ label may_question_1:
                 $ charm -= 1
                 pause(0.0001)
             show may normal
-            may "That's a shame, I don't really like rowing."
+            may "That's a shame. I don't really like rowing."
             jump may_fail
         "loser competition - I think you could win.":
             show may sad
-            may "Wow, I didn't expect you to be this kind of person."
+            may "Wow, [name], I didn't expect you to be that kind of person."
             jump may_fail
         
 label may_question_2:
@@ -309,7 +384,9 @@ label may_question_2:
                 $ charm -= 1
                 pause(0.0001)
             show may sweat
-            may "I've never heard of that game. I don't think I'd have fun."
+            may "I've never heard of that game."
+            
+            may "If it's a competition, I don't think I'd have much fun."
             jump may_fail
         "OLO. (-[CHARM_COST_2] Charm)" if charm >= CHARM_COST_2:
             play sound "audio/charm-sound.wav"
@@ -322,12 +399,14 @@ label may_question_2:
             jump may_question_3
         "people like you - haha.":
             show may angry1
+            may "Very funny."
+
             may "That doesn't sound like my idea of fun at all."
             jump may_fail
 
 label may_question_3:
     show may smile2
-    may "I'm down to go. Is there anyone I know there?"
+    may "Okay, I'm down to go. Is there anyone I know there?"
     menu:
         may "I'm down to go. Is there anyone I know there?"
         "There's a guy from NCat there. (-[CHARM_COST_3] Charm)" if charm >= CHARM_COST_3:
@@ -337,7 +416,10 @@ label may_question_3:
                 $ charm -= 1
                 pause(0.0001)
             show may surprised
-            may "Double no way! I'm so excited!"
+            may "Double no way!"
+
+            show may smile3
+            may "I'm so excited!"
             jump may_win
         "There's a guy from Tior there. (-[CHARM_COST_3] Charm)" if charm >= CHARM_COST_3:
             play sound "audio/charm-sound.wav"
@@ -346,14 +428,18 @@ label may_question_3:
                 $ charm -= 1
                 pause(0.0001)
             show may sweat
-            may "I'm confused. Why would I know someone from Tior? They are fierce rivals with NCat."
+            may "I'm confused. Why would I know someone from Tior? They've got a pretty fierce rivalry going with NCat."
             jump may_fail
         "No one that you deserve to talk to.":
+            may "Ugh, what is that supposed to mean?"
+
             jump may_fail
 
 label may_win:
     show may laugh
-    may "Okay it's settled, I'd love to go with you to the party!"
+    may "Okay, it's settled, then."
+    
+    may "I'd love to go with you to the party!"
     hide may laugh
     with Dissolve(0.5)
     call screen game_won
@@ -402,7 +488,7 @@ label athena_question_1:
 label athena_question_2:
     show athena asleep
     menu:
-        "I'm glad your interested. (-[CHARM_COST_2] Charm)" if charm >= CHARM_COST_2:
+        "I'm glad you're interested. (-[CHARM_COST_2] Charm)" if charm >= CHARM_COST_2:
             play sound "audio/charm-sound.wav"
             $ charm_start = charm
             while charm > charm_start - CHARM_COST_2: # decrease charm bar
@@ -410,7 +496,7 @@ label athena_question_2:
                 pause(0.0001)
             athena "Melons..."
             jump athena_question_3
-        "I'M GLAD YOUR INTERESTED!!! (-[CHARM_COST_2] Charm)" if charm >= CHARM_COST_2:
+        "I'M GLAD YOU'RE INTERESTED!!! (-[CHARM_COST_2] Charm)" if charm >= CHARM_COST_2:
             play sound "audio/charm-sound.wav"
             $ charm_start = charm
             while charm > charm_start - CHARM_COST_2: # decrease charm bar
@@ -444,25 +530,46 @@ label athena_question_3:
             jump athena_fail
 
 label athena_win:
-    mc "Okay it's settled, I'm going with you to the party!"
+    mc "Okay, it's settled."
+
+    show athena tired2
+    athena "Hmm...?"
+
+    mc "I'm going with you to the party!"
+
+    show athena tired1
+    athena "Oh-!"
+
     hide athena
     with Dissolve(0.5)
     call screen game_won
 
 label athena_fail:
-    show athena tired2
-    athena "mm...m.."
+    show athena tireddark2
+    athena "Eeuu..."
 
-    show athena tired1
-    athena "H-hi? Who are you?"
+    show athena tireddark1
+    athena "...Hi? Who are you?"
 
-    mc "I'm [name], did Claire send you to my party?"
+    mc "I'm [name]."
+    mc "You're, um."
+    mc "In my bed."
+    mc "Did Claire send you to my party?"
 
     show athena tireddark2
-    athena "What party? I think there's been some kind of a mistake. I shouldn't be here."
+    athena "Huh? I don't..."
+    athena "I don't know a Claire."
 
-    athena "I'll get going, goodbye..."
+    show athena tireddark1
+    athena "I don't even know where I am."
 
-    hide athena tireddark2
+    show athena tireddark2
+    athena "I think there's been some kind of a mistake."
+    athena "I shouldn't be here."
+
+    show athena tireddark1
+    athena "I'm sorry to have bothered you."
+
+    hide athena tireddark1
     with Dissolve(0.5)
     call screen game_over
