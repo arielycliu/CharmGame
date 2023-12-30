@@ -1,5 +1,6 @@
 label may:
     scene bg sittingroom
+    play music "may.mp3" fadein 1.0 fadeout 1.0 volume 0.75
     "My legs are starting to feel tired after all this standing around and socializing."
 
     "Maybe I should sit down for a while on the couch."

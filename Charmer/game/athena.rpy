@@ -1,6 +1,7 @@
 label athena:
     scene bg hallway
     show screen bars
+    play music "athena.mp3" fadein 1.0 volume 0.5 fadeout 1.0
 
     "There's only one person left."
 
@@ -32,7 +33,7 @@ label athena:
 
     "I try to think back to what Claire has mentioned to me."
 
-    "From what she mentioned, there was supposed to be another guy named Henry here."
+    "From what she said, there was supposed to be another guy named Henry here."
 
     "Did he stand me up?"
 

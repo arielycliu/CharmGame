@@ -1,6 +1,7 @@
 label ellie:
     scene bg hallway
     show screen bars
+    play music "ellie.mp3" fadein 0.25 fadeout 1.0
     
     "I slip into the hallway to take a moment to gather myself. Claire was right - these conversations do take up a lot of energy. I've only just gotten started, though, so I can't afford to take a break now."
 
@@ -287,12 +288,16 @@ label look_merge:
     show ellie neutral
     ellie "Oh, and you've got this picture frame that looks like a family tree, but it's all just photos of yourself."
 
-    "Is that weird? I wasn't sure what the custom is."
+    "Is that weird? I wasn't sure what the frame was supposed to be for, so I just put a bunch of random pictures into it."
 
     show ellie confused
     ellie "Actually, I have no clue what that one's supposed to mean."
 
-    "Okay, maybe it is. An excuse, then."
+    "Okay, maybe I need to stop her from reading too much into my things."
+
+    "Before she thinks my furniture's too out of the ordinary, or something."
+    
+    "An excuse, then."
 
     mc "I guess you could say that I don't get along with my family."
 
@@ -617,8 +622,12 @@ label ellie_leaves:
     $ ellie_stays = False
     scene bg hallway
     show ellie disappointed
-    ellie "Uh... I don't really feel comfortable here"
-    ellie "I think I'll leave early."
+    ellie "Uh... I don't really want to stay anymore."
+    ellie "I think I'm going to leave early."
+    mc "Oh."
+    mc "Okay, Ellie."
+    ellie "Sorry. I had..."
+    ellie "A good time tonight."
 
     hide ellie
     jump may

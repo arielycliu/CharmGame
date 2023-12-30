@@ -11,6 +11,7 @@ label tutorial:
     $ athena_stayed = True
 
     scene bg livingroom
+    play music "claire.mp3" fadein 1.0
 
     python:
         name = renpy.input("What's your name?")
@@ -103,8 +104,12 @@ label tutorial:
         show claire smile2
         claire "You don't want to run out of CHARM at a pivotal moment, after all."
 
+        claire "And besides, sometimes CHARM isn't even the right way into your dates' hearts."
+
+        claire "You don't want to waste CHARM, either, got that?"
+
         show claire smile
-        claire "So sometimes, you might want to just make decisions that aren't as CHARMing, rather than ones that endear you to people."
+        claire "That means there are times where you might want to just make decisions that aren't as CHARMing."
 
         mc "Like you're one to talk. I've never seen you scrape the bottom of your CHARM limit, Claire."
 
@@ -143,7 +148,7 @@ label tutorial:
         with Dissolve(0.5)
 
         show charms2
-        "You received Claire's charm braclet"
+        "You received Claire's charm bracelet."
 
         scene bg livingroom
         with Dissolve(0.5)
