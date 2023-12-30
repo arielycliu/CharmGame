@@ -233,5 +233,6 @@ image charms4:
 
 label start:
     $ name = "Richard"
-    $ charm = 50
-    jump athena
+    $ charm = 100
+    $ chosen_one = "Ellie"
+    jump one_on_one

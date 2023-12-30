@@ -278,6 +278,7 @@ label athena_leaves:
     athena "I think there's been some kind of a mistake. I shouldn't be here."
 
     hide athena
+    with Dissolve(0.5)
 
     mc "Well that's unfortunate."
 
