@@ -21,17 +21,17 @@ label chmsq:
     $ choice_len = len(choices)
 
     if choice_len == 0:
-        mc "Well that went a lot worse than I expected."
+        mc "Well, that went a lot worse than I expected."
         mc "Looks like there I'll have to go to the party alone again this year."
         call screen game_over
         return
     elif choice_len == 1:
-        mc "Well that went about as well as I expected."
+        mc "Well, that went about as well as I expected."
         mc "I guess I'll try and get [choices[0]] to go with me."
         $ chosen_one = choices[0]
         jump after_charm
     else:
-        mc "Well that went better than I expected."
+        mc "Well, that went better than I expected."
         mc "I can only take one of them as my date though."
 
         "Who should I take?"
@@ -46,7 +46,9 @@ label chmsq:
 label chmsq_start:
     scene bg outside night
     show screen bars
-    "Time flies, it's already nighttime."
+    "Time flies, huh? It's already nighttime."
+
+    "There's nothing else for it."
 
     "I guess it's time to wrap this party up..."
 
