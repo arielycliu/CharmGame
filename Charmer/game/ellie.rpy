@@ -400,7 +400,7 @@ label parents_merge:
     "She sighs."
 
     show ellie neutral
-    ellie "Sorry. Actually, that was a pretty random thing to just blurt out at a stranger."
+    ellie "Sorry. Actually, that was a pretty random thing to just blurt out to a stranger."
 
     show ellie vneutral
     ellie "Maybe I've said too much."
