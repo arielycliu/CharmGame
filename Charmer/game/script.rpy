@@ -233,4 +233,4 @@ image charms4:
 
 label start:
     $ name = "Ariel"
-    jump chmsq
+    jump tutorial

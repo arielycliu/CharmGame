@@ -15,7 +15,7 @@ label tutorial:
 
     python:
         name = renpy.input("What's your name?")
-        name = name.strip() or "Undisclosed name"
+        name = name.strip() or "Charmer"
 
     define mc = Character("[name]", color="#4378a9")
     
