@@ -22,7 +22,7 @@ label chmsq:
 
     if choice_len == 0:
         mc "Well, that went a lot worse than I expected."
-        mc "Looks like there I'll have to go to the party alone again this year."
+        mc "Looks like I'll have to go to the party alone again this year."
         call screen game_over
         return
     elif choice_len == 1:
@@ -31,14 +31,18 @@ label chmsq:
         $ chosen_one = choices[0]
         jump after_charm
     else:
-        mc "Well, that went better than I expected."
-        mc "I can only take one of them as my date though."
+        mc "Well, that went way better than I expected."
+        mc "I can only take one of them as my date to the gala, though."
 
         "Who should I take?"
         call screen choseone
         $ chosen_one = _return
 
-        mc "Got it, I'll take [chosen_one]."
+        mc "Hmm..."
+        
+        mc "It's set."
+        
+        mc "I'll take [chosen_one]."
     
     jump chmsq_start
 
@@ -50,12 +54,12 @@ label chmsq_start:
 
     "There's nothing else for it."
 
-    "I guess it's time to wrap this party up..."
+    "I guess it's time to wrap this party up."
 
     scene bg hallway
     "I head back inside and lock the door behind me."
 
-    "I walk up to the breaker, and switch off all of the power."
+    "Then, I walk up to the breaker, and switch off all of the power."
 
     scene bg hallway night
 
@@ -373,5 +377,5 @@ label after_charm:
 
     mc "I hope that's enough to woo [chosen_one]."
 
-    mc "Sigh. I guess I should stop being spooky and turn the lights back on now."
+    mc "Sigh. I guess I should stop being scary and turn the lights back on now."
     jump one_on_one

@@ -33,7 +33,7 @@ label athena:
 
     "I try to think back to what Claire has mentioned to me."
 
-    "From what she mentioned, there was supposed to be another guy named Henry here."
+    "From what she said, there was supposed to be another guy named Henry here."
 
     "Did he stand me up?"
 
