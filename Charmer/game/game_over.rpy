@@ -31,7 +31,7 @@ screen game_over():
             text "Would you like to restart?":
                 size 45
                 xalign 0.5
-            hbox spacing 300:
+            hbox spacing 200:
                 textbutton "Yes":
                     action Jump("tutorial")
                     style "yes_btn"
