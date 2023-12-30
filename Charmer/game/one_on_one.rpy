@@ -23,7 +23,7 @@ label ellie_question_1:
     scene bg hallway
     show screen bars
     show ellie happy
-    play "ellie.mp3" fadein 1.0
+    play music "ellie.mp3" fadein 1.0
 
     ellie "Oh, there you are, [name]."
 
@@ -182,6 +182,8 @@ label chad_question_1:
     show screen bars
     show chad normal
 
+    play music "chad.mp3" fadein 1.0
+
     chad "Oh, hey, [name]."
     chad "What happened to the lights just now?"
 
@@ -319,6 +321,8 @@ label chad_fail:
 label may_question_1:
     scene bg sittingroom
     show screen bars
+
+    play music "may.mp3" fadein 1.0 volume 0.75
     
     show may smile1
     may "It's good to see you, [name]."
@@ -458,6 +462,8 @@ label may_fail:
 label athena_question_1:
     scene bg bedroom
     show screen bars
+
+    play music "athena.mp3" fadein 1.0 volume 0.5
     
     show athena asleep
     
