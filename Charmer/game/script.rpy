@@ -111,6 +111,9 @@ image ellie suprised:
 image ellie veryangry:
     "images/Ellie/ellie veryangry.png"
     default_zoom
+image ellie vneutral:
+    "images/Ellie/ellie vneutral.png"
+    default_zoom
 
 
 image may angry1:
