@@ -39,49 +39,30 @@ label may:
     show may surprised
     may_unknown "Wait, you play NCat? I've written some of the code for that game! I worked as a game developer there for a while."
 
-    if charm >= 10:
-        menu:
-            "Wait, you play NCat? I've written some of the code for that game! I worked as a game developer there for a while."
-            "Wow, that's impressive! (-10 charm)":
-                play sound "audio/charm-sound.wav"
-                $ charm_start = charm
-                while charm > charm_start - 5:
-                    $ charm -= 1
-                    pause(0.0001)
+    menu:
+        "Wait, you play NCat? I've written some of the code for that game! I worked as a game developer there for a while"
+        "Wow, that's impressive! (-10 charm)" if charm >= 10:
+            play sound "audio/charm-sound.wav"
+            $ charm_start = charm
+            while charm > charm_start - 5:
+                $ charm -= 1
+                pause(0.0001)
+            show may laugh
+            may_unknown "Thank you, thank you!"
+        "Oh, cool.":
+            $ may_approval -= 5
+            show may normal
+            may_unknown "Thanks."
+            if may_approval <= 0:
+                jump may_leaves
+        "I've noticed some bugs in the code...":
+            $ may_approval -= 10
+            show may sweat
+            may_unknown "I'm not responsible for all of the code. In reality, my individual impact was probably pretty small."
+            may_unknown "If it was my error that caused your bug, though, then I'm sorry about that."
+            if may_approval <= 0:
+                jump may_leaves
 
-                $ may_approval -= 0
-                show may laugh
-                may_unknown "Thank you, thank you!"
-            "Oh, cool.":
-                $ may_approval -= 5
-                if may_approval <= 0:
-                    jump may_leaves
-                show may normal
-                may_unknown "Thanks."
-            "I've noticed some bugs in the code...":
-                $ may_approval -= 10
-                if may_approval <= 0:
-                    jump may_leaves
-                show may sweat
-                may_unknown "I'm not responsible for all of the code. In reality, my individual impact was probably pretty small."
-                may_unknown "If it was my error that caused your bug, though, then I'm sorry about that."
-    else:
-        menu:
-            "Wait, you play NCat? I've written some of the code for that game! I worked as a game developer there for a while."
-            "Oh, cool.":
-                $ may_approval -= 5
-                if may_approval <= 0:
-                    jump may_leaves
-                show may normal
-                may_unknown "..."
-            "I've noticed some bugs in the code...":
-                $ may_approval -= 10
-                if may_approval <= 0:
-                    jump may_leaves
-                show may sweat
-                may_unknown "I'm not responsible for all of the code. In reality, my individual impact was probably pretty small."
-                may_unknown "If it was my error that caused your bug, though, then I'm sorry about that."
-    
     show may smile1
     may "My name is May, by the way. How do you know Claire?"
 
@@ -111,49 +92,33 @@ label may:
     show may smirk
     may "When she mentioned that she has a good-looking friend searching for a date, I had to come and see them for myself."
 
-    if charm >= 15:
-        menu:
-            may "When she mentioned that she has a good-looking friend searching for a date, I had to come and see them for myself."
+    menu:
+        may "When she mentioned that she has a good-looking friend searching for a date, I had to come and see them for myself."
 
-            "I think you're the good-looking one here. (-15 charm)":
-                play sound "audio/charm-sound.wav"
-                $ charm_start = charm
-                while charm > charm_start - 15:
-                    $ charm -= 1
-                    pause(0.0001)
-                show may laugh
-                may "I'm flattered."
+        "I think you're the good-looking one here. (-15 charm)" if charm >= 15:
+            play sound "audio/charm-sound.wav"
+            $ charm_start = charm
+            while charm > charm_start - 15:
+                $ charm -= 1
+                pause(0.0001)
+            show may laugh
+            may "I'm flattered."
 
-            "Well, I'm flattered that you took the chance.":
-                $ may_approval -= 7
-                if may_approval <= 0:
-                    jump may_leaves
-                show may smile2
-                may "Me too."
+        "Someone sounds a little desperate.":
+            $ may_approval -= 10
+            show may smile2
+            may "..."
+            may "Wow okay..."
+            if may_approval <= 0:
+                jump may_leaves
 
-            "I guess I'm glad that you did.":
-                $ may_approval -= 7
-                if may_approval <= 0:
-                    jump may_leaves
-                show may smile2
-                may "Me too."
-    else:
-        menu:
-            may "When she mentioned that she has a good-looking friend searching for a date, I had to come and see them for myself."
-
-            "Well, I'm flattered that you took the chance.":
-                $ may_approval -= 7
-                if may_approval <= 0:
-                    jump may_leaves
-                show may smile2
-                may "Me too."
-
-            "I guess I'm glad that you did.":
-                $ may_approval -= 7
-                if may_approval <= 0:
-                    jump may_leaves
-                show may smile2
-                may "Me too."
+        "Well I hope you find them.":
+            $ may_approval -= 7
+            show may normal
+            may "..."
+            may "Me too."
+            if may_approval <= 0:
+                jump may_leaves
     
     mc "So, aside from coding and gaming, what are your other interests?"
 
@@ -174,87 +139,60 @@ label may:
 
     menu:
         may "Maybe I could take you there sometime?"
-
-        "That sounds amazing.":
+        "That sounds amazing. (-5 charm)" if charm >= 5:
             show may smile2
             may "Perfect! It's a date."
 
         "Maybe - swimming isn't really my thing.":
-            $ may_approval -= 7
-            if may_approval <= 0:
-                jump may_leaves
+            $ may_approval -= 5
             show may sweat
             may "Oh, maybe we could go on another type of date then."
-        "No.":
-            $ may_approval -= 10
             if may_approval <= 0:
                 jump may_leaves
+        "No.":
+            $ may_approval -= 10
             show may sweat
             may "Oh, that's okay. Maybe we could go on a date someplace else."
+            if may_approval <= 0:
+                jump may_leaves
 
     show may smirk
     may "Speaking of dates, do you have any ideas on where you'd take me on a date?"
 
-    if charm >= 10:
-        menu:
-            may "Speaking of dates, do you have any ideas on where you'd take me on a date?"
+    menu:
+        may "Speaking of dates, do you have any ideas on where you'd take me on a date?"
 
-            "The arcade! (-10 charm)":
-                play sound "audio/charm-sound.wav"
-                $ charm_start = charm
-                while charm > charm_start - 10:
-                    $ charm -= 1
-                    pause(0.0001)
-                $ may_approval -= 3
-                if may_approval <= 0:
-                    jump may_leaves
-                show may laugh
-                may "I'd love that."
+        "The arcade! (-10 charm)" if charm >= 10:
+            play sound "audio/charm-sound.wav"
+            $ charm_start = charm
+            while charm > charm_start - 10:
+                $ charm -= 1
+                pause(0.0001)
+            show may laugh
+            may "I'd love that."
 
-            "Whale-watching!":
-                show may smile3
-                may "No way, how'd you know? I would love that."
-                may "I adore orcas. Their coordination and teamwork is really awe-inspiring stuff."
+        "Whale-watching!":
+            show may smile3
+            may "No way, how'd you know? I would love that."
+            may "I adore orcas. Their coordination and teamwork is really awe-inspiring stuff."
 
-                show may normal
-                may "Have you ever gone whale watching before?"
-                mc "Not yet, but it's on my bucket list. I imagine it's a breathtaking experience."
+            show may normal
+            may "Have you ever gone whale watching before?"
+            mc "Not yet, but it's on my bucket list. I imagine it's a breathtaking experience."
 
-                show may smile3
-                may "It truly is. We should plan a whale-watching trip together sometime."
-                mc "I'd love that. Count me in!"
+            show may smile3
+            may "It truly is. We should plan a whale-watching trip together sometime."
+            mc "I'd love that. Count me in!"
 
-            "Karaoke!":
-                $ may_approval -= 13
-                if may_approval <= 0:
-                    jump may_leaves
-                show may sweat
-                may "Oh..."
-                may "Haha, my voice isn't the greatest. Maybe next time!"
+        "Karaoke!":
+            $ may_approval -= 13
+            show may sweat
+            may "Oh..."
+            may "Haha, my voice isn't the greatest. Maybe next time!"
+            if may_approval <= 0:
+                jump may_leaves
 
-    else:
-        menu:
-            may "Speaking of dates, do you have any ideas on where you'd take me on a date?"
-
-            "Whale-watching!":
-                show may smile3
-                may "No way, how'd you know? I would love that."
-                may "I adore orcas. Their coordination and teamwork is really awe-inspiring stuff."
-
-                show may normal
-                may "Have you ever gone whale watching before?"
-                mc "Not yet, but it's on my bucket list. I imagine it's a breathtaking experience."
-
-                show may smile3
-                may "It truly is. We should plan a whale-watching trip together sometime."
-                mc "I'd love that. Count me in!"
-            "Karaoke!":
-                $ may_approval -= 13
-                if may_approval <= 0:
-                    jump may_leaves
-                show may sweat
-                may "Oh..."
-                may "Haha, my voice isn't the greatest. Maybe next time"
+    
 
     mc "I'm glad we have a lot of exciting plans ahead, May."
 
@@ -271,7 +209,7 @@ label may_leaves:
     may "Uh..."
 
     show may normal
-    may "I'm sorry to say this, but I don't want to waste your time."
+    may "So uh, I don't like to waste people's time - So I'll just get straight to the point."
     
     show may smile2
     may "I don't think we're going to be a good fit."
@@ -286,9 +224,12 @@ label may_leaves:
 
     mc "Oh, oka-"
 
+    hide may smirk
+    with Dissolve(0.5)
+
     "Before I finish saying my goodbyes, she's out the door."
 
-    "Well. Onward, ho."
+    "Well. Onward, we go."
 
     hide may smirk
 
