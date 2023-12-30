@@ -235,4 +235,4 @@ label start:
     $ name = "Richard"
     $ charm = 0
     $ chosen_one = "May"
-    jump ellie_charm
+    jump chmsq

@@ -1,6 +1,7 @@
 label athena:
     scene bg hallway
     show screen bars
+    play music "athena.mp3" fadein 1.0 volume 0.5 fadeout 1.0
 
     "There's only one person left."
 

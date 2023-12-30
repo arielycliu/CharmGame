@@ -1,6 +1,7 @@
 label ellie:
     scene bg hallway
     show screen bars
+    play music "ellie.mp3" fadein 0.25 fadeout 1.0
     
     "I slip into the hallway to take a moment to gather myself. Claire was right - these conversations do take up a lot of energy. I've only just gotten started, though, so I can't afford to take a break now."
 

@@ -11,6 +11,7 @@ label tutorial:
     $ athena_stayed = True
 
     scene bg livingroom
+    play music "claire.mp3" fadein 1.0
 
     python:
         name = renpy.input("What's your name?")

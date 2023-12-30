@@ -38,7 +38,7 @@ label chmsq:
         call screen choseone
         $ chosen_one = _return
 
-        mc "Got it, I'll take [chosen_one]"
+        mc "Got it, I'll take [chosen_one]."
     
     jump chmsq_start
 
@@ -74,9 +74,12 @@ label chmsq_start:
 
 label ellie_charm:
     show bg hallway night
+    with fade
+    play music "ellie_slowed.mp3"
+
     show ellie angry
     show screen bars
-    ellie "[name] why is it so dark in here? Could you turn on the lights?"
+    ellie "[name], why is it so dark in here? Could you turn on the lights?"
 
     mc "Um... give me a second."
 
@@ -149,9 +152,11 @@ label chad_charm:
     scene bg kitchen night
     with fade
 
+    play music "chad_slowed.mp3"
+
     show screen bars
     show chad annoyed
-    chad "Yo, [name] why'd you turn all the lights off?"
+    chad "Yo, [name], why'd you turn all the lights off?"
 
     mc "..."
 
@@ -163,7 +168,9 @@ label chad_charm:
     mc "Stay still..."
 
     show chad blush
-    chad "Why are you touching my chest? If you wanted to compare pecs you coulda just asked!"
+    chad "Aha, [name], why are you touching my chest?"
+    
+    chad "If you wanted to compare pecs, you could've just asked!"
 
     show chad sleepy
     chad "Whoa, I feel like I have no strength all of a sudden..."
@@ -221,6 +228,8 @@ label chad_charm:
 label may_charm:
     scene bg sittingroom night
     with fade
+
+    play music "may_slowed.mp3" volume 0.75
 
     show screen bars
     show may normal
@@ -301,10 +310,12 @@ label athena_charm:
     scene bg bedroom night
     with fade
 
-    show screen bars
-    "You tiptoe into the upstairs bedroom."
+    play music "athena_slowed.mp3" volume 0.5
 
-    "You hear the sound of light snoring."
+    show screen bars
+    "I tiptoe into my bedroom."
+
+    "Again, I hear the sound of light snoring."
 
     show athena asleep
     mc "I guess that makes things easier..."
@@ -356,10 +367,11 @@ label athena_charm:
 label after_charm:
     scene bg hallway night
     show screen bars
+    stop music fadeout 1.0
     $ charm = min(charm, 100)
-    mc "Right now I have [charm] charm points"
+    mc "Right now, I have [charm] charm points."
 
-    mc "I hope I have enough to woo [chosen_one]."
+    mc "I hope that's enough to woo [chosen_one]."
 
-    mc "*Sigh* I should stop being spooky and turn the lights back on now."
+    mc "Sigh. I guess I should stop being spooky and turn the lights back on now."
     jump one_on_one
