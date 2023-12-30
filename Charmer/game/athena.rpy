@@ -55,7 +55,7 @@ label athena:
                 jump athena_leaves
             jump hoot_2
 
-        "Hush, hush. I'm here. (-5 Charm)":
+        "Hush, hush. I'm here. (-5 Charm)" if charm >= 5:
             $ charm_start = charm
             while charm > charm_start - 5: # decrease charm bar
                 $ charm -= 1
@@ -122,7 +122,7 @@ label hoot_merge:
                 jump athena_leaves
             jump geese_2
 
-        "Good night, good night. (-5 Charm)":
+        "Good night, good night. (-5 Charm)" if charm >= 5:
             $ charm_start = charm
             while charm > charm_start - 5: # decrease charm bar
                 $ charm -= 1
@@ -203,7 +203,7 @@ label geese_merge:
                 jump athena_leaves
             jump wake_1
 
-        "Hey, listen up... (-10 Charm)":
+        "Hey, listen up... (-10 Charm)" if charm >= 10:
             $ athena_approval -= 5
             if athena_approval <= 0:
                 jump athena_leaves
@@ -214,7 +214,7 @@ label geese_merge:
                 pause(0.0001)
             jump wake_2
 
-        "Oh, you're finally awake... (-10 Charm)":
+        "Oh, you're finally awake... (-10 Charm)" if charm >= 10:
             $ charm_start = charm
             while charm > charm_start - 10: # decrease charm bar
                 $ charm -= 1
@@ -257,5 +257,30 @@ label geese_merge:
 
 label wake_merge:
     
+    mc "Hmm I don't think I can make much progress with her in this state."
+
+    mc "I guess I'll head outside for a bit of fresh air."
+
+    jump chmsq
+
+
+label athena_leaves:
+
+    show athena tired2
+    athena "mm...m.."
+
+    show athena tired1
+    athena "H-hi? Who are you?"
+
+    mc "I'm [name], did Claire send you to my party?"
+
+    show athena tireddark2
+    athena "I think there's been some kind of a mistake. I shouldn't be here."
+
+    hide athena
+
+    mc "Well that's unfortunate."
+
+    mc "I guess I'll head outside for a bit of fresh air."
 
     jump chmsq

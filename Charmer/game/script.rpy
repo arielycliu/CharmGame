@@ -18,9 +18,9 @@ default may_approval = 20
 default athena_approval = 20
 
 default ellie_stayed = True
-default chad_stayed = False
+default chad_stayed = True
 default may_stayed = True
-default athena_stayed = False
+default athena_stayed = True
 
 transform default_zoom:
     zoom 0.75
@@ -233,5 +233,5 @@ image charms4:
 
 label start:
     $ name = "Richard"
-    $ charm = 0
-    jump chmsq
+    $ charm = 50
+    jump athena

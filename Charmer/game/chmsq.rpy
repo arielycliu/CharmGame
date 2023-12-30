@@ -347,6 +347,7 @@ label athena_charm:
 label after_charm:
     scene bg hallway night
     show screen bars
+    $ charm = min(charm, 100)
     mc "Right now I have [charm] charm points"
 
     mc "I hope I have enough to woo [chosen_one]"
