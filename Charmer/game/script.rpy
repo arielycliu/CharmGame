@@ -232,4 +232,5 @@ image charms4:
     charm_zoom
 
 label start:
-    jump tutorial
+    $ name = "Ariel"
+    jump chmsq
