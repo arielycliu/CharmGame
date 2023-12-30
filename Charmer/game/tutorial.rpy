@@ -11,8 +11,6 @@ label tutorial:
 
     "I scan my surroundings, but there's no one out here except the party attendees, already gathered in a circle by the snack table."
 
-    "In the distance, an owl hoots."
-
     claire_unknown "Over here!"
 
     "I look around, but there doesn't seem to be anyone here."
