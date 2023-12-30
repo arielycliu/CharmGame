@@ -16,10 +16,10 @@ default ellie_approval = 20
 default may_approval = 20
 default athena_approval = 20
 
-default ellie_stayed = False
+default ellie_stayed = True
 default chad_stayed = False
-default may_stayed = False
-default athena_stayed = True
+default may_stayed = True
+default athena_stayed = False
 
 transform default_zoom:
     zoom 0.75
