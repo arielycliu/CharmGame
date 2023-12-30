@@ -2,6 +2,7 @@
 define athena = Character("Athena", color="#F4839F")
 define chad_unknown = Character("???", color="#903A4D")
 define chad = Character("Chad", color="#903A4D")
+define ellie_unknown = Character("???", color="#3b3545")
 define ellie = Character("Ellie", color="#3b3545")
 define may = Character("May", color="#3d3a59")
 
