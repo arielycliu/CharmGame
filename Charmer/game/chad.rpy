@@ -34,6 +34,8 @@ label chad:
 
     "They turn around and start boiling some water."
 
+    hide chad delighted
+    with Dissolve(0.5)
     "Once the water boils, they drop in the pasta. While it's cooking, they prepare a quick sauce of olive oil, garlic, basil, and canned tomatoes."
 
     "They combine the sauce with the spaghetti, season it with salt and pepper, and plate it beautifully."

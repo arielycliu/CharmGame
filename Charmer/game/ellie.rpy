@@ -291,13 +291,13 @@ label look_merge:
     "Is that weird? I wasn't sure what the frame was supposed to be for, so I just put a bunch of random pictures into it."
 
     show ellie confused
-    ellie "Actually, I have no clue what that one's supposed to mean."
+    ellie "Actually, I have no clue what that one's supposed to say about you."
 
     "Okay, maybe I need to stop her from reading too much into my things."
 
     "Before she thinks my furniture's too out of the ordinary, or something."
     
-    "An excuse, then."
+    "I guess I'll make an excuse, then."
 
     mc "I guess you could say that I don't get along with my family."
 
@@ -557,7 +557,7 @@ label random_merge:
         show ellie happy
         ellie "I guess I do, haha."
 
-        show ellie smile
+        show ellie neutral
         ellie "Apparently it's a bit lame to do that, but at least I make myself laugh."
 
         ellie "Better to be able to keep yourself entertained, right?"

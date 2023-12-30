@@ -232,7 +232,4 @@ image charms4:
     charm_zoom
 
 label start:
-    $ name = "Richard"
-    $ charm = 0
-    $ chosen_one = "May"
     jump tutorial

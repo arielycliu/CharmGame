@@ -21,7 +21,7 @@ label tutorial:
     
     claire_unknown "Hey! You!"
 
-    "I scan my surroundings, but there's no one out here except the party attendees, already gathered in a circle by the snack table."
+    "I scan my surroundings, but there's no one out here yet. The party attendees seem to momentarily elsewhere"
 
     claire_unknown "Over here!"
 

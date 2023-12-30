@@ -23,7 +23,7 @@ label athena:
 
     athena_unknown "Mmph... No..."
 
-    athena "Athena... Hello..."
+    athena_unknown "Athena... Hello..."
 
     "It looks like she's totally knocked out. I guess she's just talking in her sleep."
 
@@ -93,7 +93,7 @@ label hoot_merge:
     show athena asleep
     "This... is certainly a situation."
 
-    athena "Oh... I always did want a dog like this yours..."
+    athena "Oh... I always did want a dog like this..."
 
     "I don't even know what to do with her."
 

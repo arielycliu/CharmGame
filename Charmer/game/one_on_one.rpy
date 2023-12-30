@@ -151,6 +151,8 @@ label chad_question_1:
     show chad laugh
     chad "Will there be good food there?"
 
+    mc "Every year there's always a good selection of food."
+
     menu:
         mc "Every year there's always a good selection of food."
         "But I'm sure nothing could top your sushi. (-[CHARM_COST_1] Charm)" if charm >= CHARM_COST_1:
@@ -179,6 +181,8 @@ label chad_question_1:
 label chad_question_2:
     show chad smile
     chad "Hmm... I'm interested. Will there be any fun things to do at the party?"
+
+    mc "There'll be all kinds of fun games, I know you like..."
 
     menu:
         mc "There'll be all kinds of fun games, I know you like..."
@@ -266,6 +270,8 @@ label may_question_1:
     may "Will there be something fun to do there?"
     mc "Every year they host a bunch of fun competitions."
 
+    mc "This year they're hosting a..."
+
     menu:
         mc "This year they're hosting a..."
         "gaming competition. (-[CHARM_COST_1] Charm)" if charm >= CHARM_COST_1:
@@ -293,6 +299,7 @@ label may_question_1:
         
 label may_question_2:
     show may smirk
+    mc "I heard that they're playing..."
     menu:
         mc "I heard that they're playing..."
         "LOL. (-[CHARM_COST_2] Charm)" if charm >= CHARM_COST_2:
@@ -371,9 +378,9 @@ label athena_question_1:
     "Looks like she's still asleep..."
 
     "I guess I'll just ask her directly."
-
+    mc "Would you like to..."
     menu:
-        "Would you like to..."
+        mc "Would you like to..."
         "GO TO THE PARTY WITH ME!!! (-[CHARM_COST_1] Charm)" if charm >= CHARM_COST_1:
             play sound "audio/charm-sound.wav"
             $ charm_start = charm
@@ -415,6 +422,7 @@ label athena_question_2:
 
 label athena_question_3:
     show athena asleep
+    mc "Great, I'll see you there at..."
     menu:
         mc "Great, I'll see you there at..."
         "FIVE!!!! (-[CHARM_COST_3] Charm)" if charm >= CHARM_COST_3:

@@ -108,6 +108,7 @@ label may:
     show may smile1
     may "We actually met at a gaming convention a few years back. We bonded over our love for coding and, of course, video games."
 
+    show may smirk
     may "When she mentioned that she has a good-looking friend searching for a date, I had to come and see them for myself."
 
     if charm >= 15:
@@ -127,11 +128,15 @@ label may:
                 $ may_approval -= 7
                 if may_approval <= 0:
                     jump may_leaves
+                show may smile2
+                may "Me too."
 
             "I guess I'm glad that you did.":
                 $ may_approval -= 7
                 if may_approval <= 0:
                     jump may_leaves
+                show may smile2
+                may "Me too."
     else:
         menu:
             may "When she mentioned that she has a good-looking friend searching for a date, I had to come and see them for myself."
@@ -140,24 +145,31 @@ label may:
                 $ may_approval -= 7
                 if may_approval <= 0:
                     jump may_leaves
+                show may smile2
+                may "Me too."
 
             "I guess I'm glad that you did.":
                 $ may_approval -= 7
                 if may_approval <= 0:
                     jump may_leaves
+                show may smile2
+                may "Me too."
     
     mc "So, aside from coding and gaming, what are your other interests?"
 
+    show may smile3
     may "I'm a big fan of swimming. My parents enrolled me in synchronized swimming when I was young."
 
     may "I don't do as much synchro anymore, but I still swim often. It's my go-to way to unwind."
 
     mc "That sounds wonderful. I've always enjoyed the occasional swim, but I'm not as dedicated as you."
 
+    show may normal
     may "It's never too late to start."
 
     may "There's a great pool not far from here. It's practically empty Wednesday mornings."
 
+    show may smile1
     may "Maybe I could take you there sometime?"
 
     menu:
@@ -180,6 +192,7 @@ label may:
             show may sweat
             may "Oh, that's okay. Maybe we could go on a date someplace else."
 
+    show may smirk
     may "Speaking of dates, do you have any ideas on where you'd take me on a date?"
 
     if charm >= 10:
