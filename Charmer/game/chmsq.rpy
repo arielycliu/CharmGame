@@ -23,6 +23,8 @@ label chmsq:
     if choice_len == 0:
         mc "Well, that went a lot worse than I expected."
         mc "Looks like I'll have to go to the party alone again this year."
+        $ charm = 0
+        hide screen bars
         call screen game_over
         return
     elif choice_len == 1:

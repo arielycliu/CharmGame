@@ -47,11 +47,13 @@ label athena:
 
     menu:
         "Hoot... Hoot...":
-
+            $ athena_approval -= 5
+            if athena_approval <= 0:
+                jump athena_leaves
             jump hoot_1
 
         "Hiss... Hiss...":
-            $ athena_approval -= 5
+            $ athena_approval -= 10
             if athena_approval <= 0:
                 jump athena_leaves
             jump hoot_2
@@ -115,11 +117,13 @@ label hoot_merge:
 
     menu:
         "No lemons, no melon...":
-
+            $ athena_approval -= 5
+            if athena_approval <= 0:
+                jump athena_leaves
             jump geese_1
 
         "The angels that fall...":
-            $ athena_approval -= 5
+            $ athena_approval -= 10
             if athena_approval <= 0:
                 jump athena_leaves
             jump geese_2
@@ -201,7 +205,7 @@ label geese_merge:
         "I'm sure a bit of CHARM would get her attention."
 
         "FIRE! FIRE! THERE'S A FIRE!":
-            $ athena_approval -= 15
+            $ athena_approval -= 20
             if athena_approval <= 0:
                 jump athena_leaves
             jump wake_1

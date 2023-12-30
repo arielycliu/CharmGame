@@ -151,6 +151,8 @@ label ellie_question_3:
                 pause(0.0001)
             jump ellie_fail
         "Haha... Only kidding! I've been kicked out of all the local galas.'":
+            ellie "That wasn't such a nice prank to pull [name]."
+            mc "Sorry, I though you'd find it funny."
             jump ellie_fail
 
 label ellie_win:
@@ -160,7 +162,8 @@ label ellie_win:
     ellie "Let's have "
     hide ellie happy
     with Dissolve(0.5)
-
+    $ charm = 0
+    hide screen bars
     call screen game_won
 
 label ellie_fail:
@@ -172,7 +175,8 @@ label ellie_fail:
     
     hide ellie smug
     with Dissolve(0.5)
-
+    $ charm = 0
+    hide screen bars
     call screen game_over
 
 ##########################################################################################################################
@@ -305,6 +309,8 @@ label chad_win:
     chad "That sounds delightful. I'd love to go with you to the party!"
     hide chad delighted
     with Dissolve(0.5)
+    $ charm = 0
+    hide screen bars
     call screen game_won
 
 label chad_fail:
@@ -314,6 +320,8 @@ label chad_fail:
     chad "Especially since it seems like we barely know each other..."
     hide chad annoyed
     with Dissolve(0.5)
+    $ charm = 0
+    hide screen bars
     call screen game_over
 
 ##########################################################################################################################
@@ -446,6 +454,8 @@ label may_win:
     may "I'd love to go with you to the party!"
     hide may laugh
     with Dissolve(0.5)
+    $ charm = 0
+    hide screen bars
     call screen game_won
 
 label may_fail:
@@ -455,6 +465,8 @@ label may_fail:
     may "Especially since it seems like we barely know each other..."
     hide may angry1
     with Dissolve(0.5)
+    $ charm = 0
+    hide screen bars
     call screen game_over
 
 ##########################################################################################################################
@@ -548,6 +560,8 @@ label athena_win:
 
     hide athena
     with Dissolve(0.5)
+    $ charm = 0
+    hide screen bars
     call screen game_won
 
 label athena_fail:
@@ -578,4 +592,6 @@ label athena_fail:
 
     hide athena tireddark1
     with Dissolve(0.5)
+    $ charm = 0
+    hide screen bars
     call screen game_over

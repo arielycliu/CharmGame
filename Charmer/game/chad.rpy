@@ -67,7 +67,7 @@ label chad:
                 $ charm -= 1
                 pause(0.0001)
             jump photo_1
-        "Thanks.":
+        "Thanks. You have weird taste.":
             $ chad_approval -= 5
             if chad_approval <= 0:
                 jump chad_leaves
@@ -137,7 +137,12 @@ label photo_merge:
 
     menu: 
         chad "I think the best way to get to know someone is to play some Truth or Dare. Are you down to play with me?"
-        "I'm down.":
+        "I'm down. (-5 charm)" if charm >= 5:
+            play sound "audio/charm-sound.wav"
+            $ charm_start = charm
+            while charm > charm_start - 5: # decrease charm bar
+                $ charm -= 1
+                pause(0.0001)
             jump chad_truthordare
         "No thanks.":
             $ chad_approval -= 10
@@ -163,16 +168,22 @@ label chad_truthordare:
             if chad_approval <= 0:
                 jump chad_leaves
             chad "Aww you're so sweet."
-        "Voice":
+        "Voice (-5 charm)" if charm >= 5:
+            play sound "audio/charm-sound.wav"
+            $ charm_start = charm
+            while charm > charm_start - 5: # decrease charm bar
+                $ charm -= 1
+                pause(0.0001)
             show chad shocked
             chad "Really?"
             chad "I'm quite insecure about my voice, actually, so it's nice to hear that."
-        "Personality":
-            show chad blush
+        "Your nose hairs":
             $ chad_approval -= 5
             if chad_approval <= 0:
                 jump chad_leaves
-            chad "Aww, you're so sweet."
+            show chad laugh
+            chad "Oh, that's strange."
+            chad "I'm not quite sure what to make of that."
 
     show chad normal
     mc "Your turn - truth or dare?"

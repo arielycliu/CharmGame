@@ -140,6 +140,11 @@ label may:
     menu:
         may "Maybe I could take you there sometime?"
         "That sounds amazing. (-5 charm)" if charm >= 5:
+            play sound "audio/charm-sound.wav"
+            $ charm_start = charm
+            while charm > charm_start - 5: # decrease charm bar
+                $ charm -= 1
+                pause(0.0001)
             show may smile2
             may "Perfect! It's a date."
 
@@ -192,7 +197,7 @@ label may:
             if may_approval <= 0:
                 jump may_leaves
 
-    
+
 
     mc "I'm glad we have a lot of exciting plans ahead, May."
 

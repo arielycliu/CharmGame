@@ -27,40 +27,29 @@ label ellie:
     show ellie abashed
     ellie "Please, call me Ellie. Only my parents call me Eleanor."
 
-    if charm >= 10:
-        menu:
-            "Eleanor's such a lovely name, though. (-10 Charm)":
-                $ ellie_approval -= 10
-                play sound "audio/charm-sound.wav"
-                $ charm_start = charm
+    menu:
+        "Eleanor's such a lovely name, though. (-10 Charm)" if charm >= 10:
+            $ ellie_approval -= 10
+            play sound "audio/charm-sound.wav"
+            $ charm_start = charm
 
-                while charm > charm_start - 10:
-                    $ charm -= 1
-                    pause(0.0001)
+            while charm > charm_start - 10:
+                $ charm -= 1
+                pause(0.0001)
 
-                if ellie_approval <= 0:
-                    jump ellie_leaves
+            if ellie_approval <= 0:
+                jump ellie_leaves
 
-                jump ellie_1
+            jump ellie_1
 
-            "Got it. It's nice to meet you, Ellie.":
-                jump ellie_2
+        "Got it. It's nice to meet you, Ellie. (-5 Charm)" if charm >= 5:
+            jump ellie_2
 
-            "Um, hello, Ellie.":
-                $ ellie_approval -= 5
-                if ellie_approval <= 0:
-                    jump ellie_leaves
-                jump ellie_3
-    else:
-        menu:
-            "Got it. It's nice to meet you, Ellie.":
-                jump ellie_2
-
-            "Um, hello, Ellie.":
-                $ ellie_approval -= 5
-                if ellie_approval <= 0:
-                    jump ellie_leaves
-                jump ellie_3
+        "Um, hello, Ellie.":
+            $ ellie_approval -= 5
+            if ellie_approval <= 0:
+                jump ellie_leaves
+            jump ellie_3
 
     label ellie_1:
         show ellie sad
