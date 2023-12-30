@@ -1,4 +1,5 @@
 ﻿default charm = 0
+define athena_unknown = Character("???", color="#F4839F")
 define athena = Character("Athena", color="#F4839F")
 define chad_unknown = Character("???", color="#903A4D")
 define chad = Character("Chad", color="#903A4D")
@@ -15,6 +16,11 @@ default chad_approval = 20
 default ellie_approval = 20
 default may_approval = 20
 default athena_approval = 20
+
+default ellie_stayed = True
+default chad_stayed = True
+default may_stayed = True
+default athena_stayed = True
 
 transform default_zoom:
     zoom 0.75
@@ -228,4 +234,4 @@ image charms4:
 label start:
     $ name = "Richard"
     $ charm = 50
-    jump ellie
+    jump athena

@@ -1,10 +1,49 @@
-default ellie_stayed = False
-default chad_stayed = True
-default may_stayed = True
-default athena_stayed = False
 default chosen_one = "May"
+default choices = ["Ellie", "Chad", "May", "Athena"]
+
+init python:
+    def generate_choices(ellie_stayed, chad_stayed, may_stayed, athena_stayed):
+        choices = ["Ellie", "Chad", "May", "Athena"]
+        if ellie_stayed == False:
+            choices.remove("Ellie")
+        if chad_stayed == False:
+            choices.remove("Chad")
+        if may_stayed == False:
+            choices.remove("May")
+        if athena_stayed == False:
+            choices.remove("Athena")
+        return choices
 
 label chmsq:
+    scene bg outside
+
+    $ choices = generate_choices(ellie_stayed, chad_stayed, may_stayed, athena_stayed)
+    $ choice_len = len(choices)
+
+    if choice_len == 0:
+        mc "Well that went a lot worse than I expected."
+        mc "Looks like there I'll have to go to the party alone again this year."
+        call screen game_over
+        return
+    elif choice_len == 1:
+        mc "Well that went about as well as I expected."
+        mc "I guess I'll try and get [choices[0]] to go with me."
+        $ chosen_one = choices[0]
+        jump after_charm
+    else:
+        mc "Well that went better than I expected."
+        mc "I can only take one of them as my date though."
+
+        "Who should I take?"
+        call screen choseone
+        $ chosen_one = _return
+
+        mc "Got it, I'll take [chosen_one]"
+    
+    jump chmsq_start
+
+
+label chmsq_start:
     scene bg outside night
     show screen bars
     "Time flies, it's already nighttime."
@@ -310,7 +349,8 @@ label athena_charm:
 label after_charm:
     scene bg hallway night
     show screen bars
-    mc "Great, now I have [charm] charm points."
+    $ charm = min(charm, 100)
+    mc "Right now I have [charm] charm points"
 
     mc "I hope I have enough to woo [chosen_one]."
 
