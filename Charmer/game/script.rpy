@@ -4,6 +4,8 @@ define chad_unknown = Character("???", color="#903A4D")
 define chad = Character("Chad", color="#903A4D")
 define ellie_unknown = Character("???", color="#3b3545")
 define ellie = Character("Ellie", color="#3b3545")
+
+define may_unknown = Character("???", color="#3d3a59")
 define may = Character("May", color="#3d3a59")
 
 define claire_unknown = Character("???", color="#A65A4C")
@@ -226,4 +228,4 @@ image charms4:
 label start:
     $ charm = 50
     default name = "Ariel"
-    jump chad
+    jump may

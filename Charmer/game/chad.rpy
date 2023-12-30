@@ -55,10 +55,10 @@ label chad:
     show chad blush
     chad "I heard a bit about you from Claire. Your name is [name], right? You're even better-looking in person - Claire's photo doesn't do you justice."
 
-    if charm >= 10:  # charm choice 1
+    if charm >= 15:  # charm choice 1
         menu:
             "How should I respond to Chad?"
-            "If you keep this up, I think I'll like you too much. (-10 Charm)":
+            "If you keep this up, I think I'll like you too much. (-15 Charm)":
                 $ chad_approval += 0
                 $ charm_start = charm
                 while charm > charm_start - 10: # decrease charm bar
@@ -204,7 +204,7 @@ label chad_hobbies:
     show chad laugh
     chad "I could make that happen."
 
-    if charm >= 5:
+    if charm >= 10:
         menu:
             "How should I respond?"
             "Really? You'd teach me?":
@@ -214,7 +214,7 @@ label chad_hobbies:
 
                 show chad normal
                 chad "Well I won't take up much more of your time. I know you still have many more dates to meet."
-            "Would you like to move in with me? (-5 charm)":
+            "Would you like to move in with me? (-10 charm)":
                 
                 $ charm_start = charm
                 while charm > charm_start - 5:
