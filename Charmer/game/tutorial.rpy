@@ -11,6 +11,7 @@ label tutorial:
     $ athena_stayed = True
 
     scene bg livingroom
+    stop music fadeout 1.0
     play music "claire.mp3" fadein 1.0
 
     python:
