@@ -21,7 +21,7 @@ label tutorial:
     
     claire_unknown "Hey! You!"
 
-    "I scan my surroundings, but there's no one out here yet. The party attendees seem to momentarily elsewhere"
+    "I scan my surroundings, but there's no one out here. The party attendees seem to be momentarily elsewhere."
 
     claire_unknown "Over here!"
 
@@ -165,7 +165,7 @@ label tutorial:
         claire "Oh, pooh. Don't be so polite."
 
         show claire delighted
-        claire "Think of this as a birthday present. They're just a good-luck - well, you know."
+        claire "Think of this as a birthday present. It's just a good-luck - well, you know."
 
         claire "How are you planning to hunt for a date with nothing to fuel you? Even humans need energy to go about their day."
 
@@ -186,9 +186,9 @@ label tutorial:
         "Begrudgingly, I put it on. As the clasp clicks into place, I feel the CHARM flood through me, like an iced drink on a hot summer's day. The stars jingle cheerily."
 
         show claire delighted
-        claire "Looks like they're kicking in."
+        claire "Looks like it's kicking in."
         
-        claire "I'll leave you alone to go hit up your targets, then, [name]."
+        claire "I'll leave you alone to go hit up your targets then, [name]."
 
         show claire delighted2
         claire "Best of luck!"
