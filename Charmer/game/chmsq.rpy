@@ -7,14 +7,16 @@ default chosen_one = "May"
 label chmsq:
     scene bg outside night
     show screen bars
-    "Time flies, it's already nighttime"
+    "Time flies, it's already nighttime."
 
     "I guess it's time to wrap this party up..."
 
-    scene bg hallway night
-    "I head back inside and lock the door behind me"
+    scene bg hallway
+    "I head back inside and lock the door behind me."
 
     "I walk up to the breaker, and switch off all of the power."
+
+    scene bg hallway night
 
     if chosen_one != "Ellie" and ellie_stayed == True:
         jump ellie_charm
@@ -34,7 +36,7 @@ label ellie_charm:
     show screen bars
     ellie "[name] why is it so dark in here? Could you turn on the lights?"
 
-    mc "Um... give me a second"
+    mc "Um... give me a second."
 
     show ellie veryangry
     ellie "What's taking so long!"
@@ -43,11 +45,11 @@ label ellie_charm:
 
     ellie "Why are you grabbing my arm?"
 
-    mc "I'm a bit scared of the dark"
+    mc "I'm a bit scared of the dark."
 
-    ellie "[name], my arm is starting to feel kinda weird"
+    ellie "[name], my arm is starting to feel kinda weird."
 
-    mc "Good"
+    mc "Good."
 
     $ frame_count = 64
     $ frame_number = 1
@@ -87,7 +89,7 @@ label ellie_charm:
             show charms3
         else: 
             show charms4
-        "You earned 25 charm points from Ellie's soul"
+        "You earned 25 charm points from Ellie's soul."
 
         if chosen_one != "Chad" and chad_stayed == True:
             jump chad_charm
@@ -110,7 +112,7 @@ label chad_charm:
 
     mc "..."
 
-    mc "To suck your soul"
+    mc "To suck your soul."
 
     show chad laugh
     chad "What are you talking about?"
@@ -118,7 +120,7 @@ label chad_charm:
     mc "Stay still..."
 
     show chad blush
-    chad "Why are you touching my chest? If you wanted to compare pects you coulda just asked!"
+    chad "Why are you touching my chest? If you wanted to compare pecs you coulda just asked!"
 
     show chad sleepy
     chad "Whoa, I feel like I have no strength all of a sudden..."
@@ -161,7 +163,7 @@ label chad_charm:
             show charms3
         else: 
             show charms4
-        "You earned 25 charm points from Chad's soul"
+        "You earned 25 charm points from Chad's soul."
 
         if chosen_one != "May" and may_stayed == True:
             jump may_charm
@@ -180,25 +182,25 @@ label may_charm:
     show may normal
     may "Hey [name], where did everyone go?"
 
-    mc "Into my charm bracelet"
+    mc "I think you should worry about yourself first."
 
     show may laugh
-    may "Your sense of humour is truly weird"
+    may "Your sense of humour is truly weird."
 
     show may normal
     may "I guess everyone else left so I'll be direct. Wanna go to the New Year's party as a couple?"
 
-    mc "Sorry May, but I've got someone else in mind already"
+    mc "Sorry May, but I've got someone else in mind already."
 
     show may sweat
-    may "No way, is it Ellie? Well let me know if you ever need any help - bro code and all"
+    may "No way, is it Ellie? Well let me know if you ever need any help - bro code and all."
 
-    mc "May, I know you're a girl"
+    mc "May, I know you're a girl."
 
     show may smile1
-    may "Oh come on, bro is a gender neutral term"
+    may "Oh come on, bro is a gender neutral term."
 
-    mc "Sorry again, May but I need your help in another way"
+    mc "Sorry again May, but I need your help in another way."
 
     show may surprised
     may "Why are you touching m-"
@@ -241,7 +243,7 @@ label may_charm:
             show charms3
         else: 
             show charms4
-        "You earned 25 charm points from May's soul"
+        "You earned 25 charm points from May's soul."
 
         if chosen_one != "Athena" and athena_stayed == True:
             jump athena_charm
@@ -255,9 +257,9 @@ label athena_charm:
     with fade
 
     show screen bars
-    "You tiptoe into the upstairs bedroom"
+    "You tiptoe into the upstairs bedroom."
 
-    "You hear the sound of light snoring"
+    "You hear the sound of light snoring."
 
     show athena asleep
     mc "I guess that makes things easier..."
@@ -300,7 +302,7 @@ label athena_charm:
             show charms3
         else: 
             show charms4
-        "You earned 25 charm points from Athena's soul"
+        "You earned 25 charm points from Athena's soul."
         jump after_charm
 
 #################################################################################################################
@@ -308,8 +310,9 @@ label athena_charm:
 label after_charm:
     scene bg hallway night
     show screen bars
-    mc "Great, now I have [charm] charm points"
+    mc "Great, now I have [charm] charm points."
 
-    mc "I hope I have enough to woo [chosen_one]"
+    mc "I hope I have enough to woo [chosen_one]."
 
-    mc "Sigh* I should stop being spooky and turn the lights back on now"
+    mc "*Sigh* I should stop being spooky and turn the lights back on now."
+    jump one_on_one
