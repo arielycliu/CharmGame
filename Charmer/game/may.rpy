@@ -20,7 +20,7 @@ label may:
         "Sure I'm down. You'd have to teach me though.":
             show may laugh
             may_unknown "Oh, it's a bit complicated to learn."
-            show may smile
+            show may smile2
             may_unknown "You should come over to my house and I could teach you."
             mc "Sounds good, I look forward to it."
         "Nah I'm good.":
@@ -35,13 +35,19 @@ label may:
 
     mc "Not really, I play a bit of NCat from time to time though."
 
-    show may suprised
+    show may surprised
     may_unknown "Wait you play NCat? I've written some of the code on there, I worked as a game developer there for a while."
 
     if charm >= 10:
         menu:
             "Wait you play NCat? I've written some of the code on there, I worked as a game developer there for a while."
             "Wow, that's impressive! (-10 charm)":
+                
+                $ charm_start = charm
+                while charm > charm_start - 5:
+                    $ charm -= 1
+                    pause(0.0001)
+
                 $ may_approval -= 0
                 show may laugh
                 may_unknown "Thank you, thank you!"
@@ -50,7 +56,7 @@ label may:
                 if may_approval <= 0:
                     jump may_leaves
                 show may normal
-                may_unknown "..."
+                may_unknown "Thanks"
             "I've noticed some bugs in the code...":
                 $ may_approval -= 10
                 if may_approval <= 0:
@@ -87,6 +93,82 @@ label may:
 
     show may surprised
     may "That sounds pretty traumatic."
+
+    mc "What about you? How did you and Claire meet?"
+
+    show may smile1
+    may "We actually met at a gaming convention a few years back. We bonded over our love for coding and, of course, video games."
+
+    may "When she mentioned that she has a good looking friend looking for a date, I had to come and see them for myself."
+
+    if charm >= 15:
+        menu:
+            "I think you're the good looking one here (-15 charm)":
+                $ charm_start = charm
+                while charm > charm_start - 15:
+                    $ charm -= 1
+                    pause(0.0001)
+                show may laugh
+                may "I'm flattered."
+            "Well, I'm flattered that you took the chance":
+                $ may_approval -= 7
+                if may_approval <= 0:
+                    jump may_leaves
+            "I guess I'm glad you did":
+                $ may_approval -= 7
+                if may_approval <= 0:
+                    jump may_leaves
+    else:
+        menu:
+            "Well, I'm flattered that you took the chance":
+                $ may_approval -= 7
+                if may_approval <= 0:
+                    jump may_leaves
+            "I guess I'm glad you did":
+                $ may_approval -= 7
+                if may_approval <= 0:
+                    jump may_leaves
+    
+    mc "So, aside from coding and games, what are your other interests?"
+
+    may "I'm a big fan of swimming. My parents enrolled me in synchronized swimming since I was young."
+
+    may "I don't do as much synchro anymore but I still swim often. It's my go-to way to unwind."
+
+    mc "That sounds wonderful. I've always enjoyed the occasional swim, but I'm not as dedicated as you."
+
+    may "There's a great pool not far from here. It's practically empty Wednesday mornings."
+
+    may "Maybe I could take you there sometime?"
+
+    menu:
+        "That sounds amazing.":
+            show may smile2
+            may "Perfect! It's a date."
+        "Maybe, swimming isn't really my thing.":
+            $ may_approval -= 7
+            if may_approval <= 0:
+                jump may_leaves
+            show may sweat
+            may "Oh maybe we could go on another type of date then."
+        "No.":
+            $ may_approval -= 12
+            if may_approval <= 0:
+                jump may_leaves
+            show may sweat
+            may "Oh that's okay. Maybe we could go on a date someplace else."
+
+    may "Speaking of dates, do you have any favorite activities or places you enjoy?"
+
+    menu:
+        "Arcade games"
+
+    mc "It's been great getting to know you May."
+
+    may "Likewise! If you ever want to chat more about games or anything else, then hit me up. I'm always up for a good conversation with you."
+
+    jump athena
+
 
 
 

@@ -227,5 +227,5 @@ image charms4:
 
 label start:
     $ charm = 50
-    default name = "Ariel"
-    jump may
+    default name = "Janice"
+    jump ellie
