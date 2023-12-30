@@ -33,7 +33,7 @@ label chad:
 
     "They turn around and start boiling some water."
 
-    "Once the water boils, they drop in the pasta and while that is cooking, they prepare a quick sauce of olive oil, garlic, basil, and canned tomatoes."
+    "Once the water boils, they drop in the pasta. While that's cooking, they prepare a quick sauce of olive oil, garlic, basil, and canned tomatoes."
 
     "They combine the sauce with the spaghetti, season it with salt and pepper, and plate it beautifully."
 
@@ -50,10 +50,10 @@ label chad:
     "While I'm slurping down the pasta, they pull out a chair and sit down next to me."
 
     show chad smile
-    chad_unknown "I don't think we've met formally before, my name is Chad"
+    chad_unknown "I don't think we've met formally before. My name's Chad."
 
     show chad blush
-    chad "I heard a bit about you from Claire. Your name is [name] right? You're even prettier in person - Claire's photo doesn't do you justice."
+    chad "I heard a bit about you from Claire. Your name is [name], right? You're even better-looking in person - Claire's photo doesn't do you justice."
 
     if charm >= 15:  # charm choice 1
         menu:
@@ -89,7 +89,7 @@ label chad:
     label photo_1:
         "Whoa, I don't even sound like myself. I better thank Claire properly later for the charms."
         show chad shocked
-        chad "Whoa bold... not that I don't like it..."
+        chad "Ha, bold. Not that I don't like it."
         chad "I kinda like it..."
         jump photo_merge
 
@@ -127,6 +127,7 @@ label chad:
 label photo_merge:
     scene bg kitchen
     show chad smile2
+    # I would recommend adding a transition between the previous part and here
     chad "I think the best way to get to know someone is to play some Truth or Dare. Are you down to play with me?"
 
     menu: 
@@ -148,7 +149,7 @@ label photo_merge:
 
 label chad_truthordare:
     chad "Alright! Truth or dare?"
-    mc "Truth, Dares are scary."
+    mc "Truth. (Dares are intimidating.)"
     chad "What do you like the most about me?"
     menu:
         "What do you like the most about Chad?"

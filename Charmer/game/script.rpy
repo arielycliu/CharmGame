@@ -2,6 +2,7 @@
 define athena = Character("Athena", color="#F4839F")
 define chad_unknown = Character("???", color="#903A4D")
 define chad = Character("Chad", color="#903A4D")
+define ellie_unknown = Character("???", color="#3b3545")
 define ellie = Character("Ellie", color="#3b3545")
 
 define may_unknown = Character("???", color="#3d3a59")
@@ -112,6 +113,9 @@ image ellie suprised:
     default_zoom
 image ellie veryangry:
     "images/Ellie/ellie veryangry.png"
+    default_zoom
+image ellie vneutral:
+    "images/Ellie/ellie vneutral.png"
     default_zoom
 
 
