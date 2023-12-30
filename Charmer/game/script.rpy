@@ -1,4 +1,5 @@
 ﻿default charm = 0
+define athena_unknown = Character("???", color="#F4839F")
 define athena = Character("Athena", color="#F4839F")
 define chad_unknown = Character("???", color="#903A4D")
 define chad = Character("Chad", color="#903A4D")
