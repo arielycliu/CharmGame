@@ -39,7 +39,7 @@ screen game_won():
                     action Jump("tutorial")
                     style "yes_btn"
                 textbutton "No":
-                    action Return()
+                    action MainMenu()
                     style "no_btn"
                 xalign 0.5
                 yalign 0.5

@@ -2,7 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/game_over.rpy", line 47: Indentation mismatch.
+File "game/script.rpy", line 236: expected statement.
+    <<<<<<< HEAD
+                ^
+
+File "game/script.rpy", line 240: expected statement.
+    =======
+          ^
+
+File "game/script.rpy", line 244: expected statement.
+    >>>>>>> 23f88460bdc7412e77dc933c0b81910ddd8bac7f
+                                                    ^
 
 Ren'Py Version: Ren'Py 8.1.3.23091805
-Fri Dec 29 23:58:49 2023
+Sat Dec 30 03:56:07 2023
