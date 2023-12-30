@@ -60,6 +60,7 @@ label chad:
             "How should I respond to Chad?"
             "If you keep this up, I think I'll like you too much. (-15 Charm)":
                 $ chad_approval += 0
+                play sound "audio/charm-sound.wav"
                 $ charm_start = charm
                 while charm > charm_start - 15: # decrease charm bar
                     $ charm -= 1
@@ -107,7 +108,7 @@ label chad:
 
                 "Nonono I didn't mean it. Sorry I get nervous when talking to new people. (-50 charm)":
                     $ chad_approval += 10 # approval went from 0 to 10
-
+                    play sound "audio/charm-sound.wav"
                     $ charm_start = charm
                     while charm > charm_start - 50:
                         $ charm -= 1
@@ -214,7 +215,7 @@ label chad_hobbies:
                 show chad normal
                 chad "Well I won't take up much more of your time. I know you still have many more dates to meet."
             "Would you like to move in with me? (-10 charm)":
-                
+                play sound "audio/charm-sound.wav"
                 $ charm_start = charm
                 while charm > charm_start - 10:
                     $ charm -= 1

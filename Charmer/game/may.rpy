@@ -42,7 +42,7 @@ label may:
         menu:
             "Wait you play NCat? I've written some of the code on there, I worked as a game developer there for a while."
             "Wow, that's impressive! (-10 charm)":
-                
+                play sound "audio/charm-sound.wav"
                 $ charm_start = charm
                 while charm > charm_start - 5:
                     $ charm -= 1
@@ -104,6 +104,7 @@ label may:
     if charm >= 15:
         menu:
             "I think you're the good looking one here (-15 charm)":
+                play sound "audio/charm-sound.wav"
                 $ charm_start = charm
                 while charm > charm_start - 15:
                     $ charm -= 1
@@ -163,6 +164,7 @@ label may:
     if charm >= 10:
         menu:
             "Arcade games (-10 charm)":
+                play sound "audio/charm-sound.wav"
                 $ charm_start = charm
                 while charm > charm_start - 10:
                     $ charm -= 1

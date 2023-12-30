@@ -1,4 +1,15 @@
 label tutorial:
+    $ charms = 0
+    $ chad_approval = 20
+    $ ellie_approval = 20
+    $ may_approval = 20
+    $ athena_approval = 20
+
+    $ ellie_stayed = True
+    $ chad_stayed = True
+    $ may_stayed = True
+    $ athena_stayed = True
+
     scene bg livingroom
 
     python:
@@ -161,10 +172,10 @@ label tutorial:
         show claire smile2
         claire "Now do it. Don't make me ask again."
     
+        play sound "audio/charm-sound.wav"
         while charm < 50:
             $ charm += 1
             pause(0.0001)
-        
         $ charm = 50
 
         "Begrudgingly, I put it on. As the clasp clicks into place, I feel the CHARM flood through me, like an iced drink on a hot summer's day. The stars jingle cheerily."

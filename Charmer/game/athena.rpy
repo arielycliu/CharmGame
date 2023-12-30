@@ -56,6 +56,7 @@ label athena:
             jump hoot_2
 
         "Hush, hush. I'm here. (-5 Charm)" if charm >= 5:
+            play sound "audio/charm-sound.wav"
             $ charm_start = charm
             while charm > charm_start - 5: # decrease charm bar
                 $ charm -= 1
@@ -123,6 +124,7 @@ label hoot_merge:
             jump geese_2
 
         "Good night, good night. (-5 Charm)" if charm >= 5:
+            play sound "audio/charm-sound.wav"
             $ charm_start = charm
             while charm > charm_start - 5: # decrease charm bar
                 $ charm -= 1
@@ -207,7 +209,7 @@ label geese_merge:
             $ athena_approval -= 5
             if athena_approval <= 0:
                 jump athena_leaves
-
+            play sound "audio/charm-sound.wav"
             $ charm_start = charm
             while charm > charm_start - 10: # decrease charm bar
                 $ charm -= 1
@@ -215,6 +217,7 @@ label geese_merge:
             jump wake_2
 
         "Oh, you're finally awake... (-10 Charm)" if charm >= 10:
+            play sound "audio/charm-sound.wav"
             $ charm_start = charm
             while charm > charm_start - 10: # decrease charm bar
                 $ charm -= 1

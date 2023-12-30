@@ -30,6 +30,7 @@ label ellie:
         menu:
             "Eleanor's such a lovely name, though. (-10 Charm)":
                 $ ellie_approval -= 10
+                play sound "audio/charm-sound.wav"
                 $ charm_start = charm
 
                 while charm > charm_start - 10:
@@ -405,6 +406,7 @@ label parents_merge:
         menu:
             "No, that's okay. I'm touched that you trusted me enough to tell me that. (-10 Charm)":
                 $ ellie_approval += 0
+                play sound "audio/charm-sound.wav"
                 $ charm_start = charm
                 while charm > charm_start - 10: # decrease charm bar
                     $ charm -= 1
@@ -521,6 +523,7 @@ label random_merge:
 
             "You should smile like that for me more often. (-10 Charm)":
                 $ ellie_approval -= 5
+                play sound "audio/charm-sound.wav"
                 $ charm_start = charm
                 while charm > charm_start - 10: # decrease charm bar
                     $ charm -= 1

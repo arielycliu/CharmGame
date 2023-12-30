@@ -71,6 +71,7 @@ label chmsq_start:
 #################################################################################################################
 
 label ellie_charm:
+    show bg hallway night
     show ellie angry
     show screen bars
     ellie "[name] why is it so dark in here? Could you turn on the lights?"
@@ -113,6 +114,7 @@ label ellie_charm:
         scene bg black
         with Dissolve(0.5)
 
+        play sound "audio/charm-sound.wav"
         $ charm_start = charm
         while charm < charm_start + 25:
             $ charm += 1
@@ -187,6 +189,7 @@ label chad_charm:
         scene bg black
         with Dissolve(0.5)
 
+        play sound "audio/charm-sound.wav"
         $ charm_start = charm
         while charm < charm_start + 25:
             $ charm += 1
@@ -267,6 +270,7 @@ label may_charm:
         scene bg black
         with Dissolve(0.5)
 
+        play sound "audio/charm-sound.wav"
         $ charm_start = charm
         while charm < charm_start + 25:
             $ charm += 1
@@ -326,6 +330,7 @@ label athena_charm:
         scene bg black
         with Dissolve(0.5)
 
+        play sound "audio/charm-sound.wav"
         $ charm_start = charm
         while charm < charm_start + 25:
             $ charm += 1
