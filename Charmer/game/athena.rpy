@@ -252,16 +252,17 @@ label geese_merge:
     label wake_3:
         athena "Ohhh..."
 
-        "Worked pretty well."
+        "Looks like it worked pretty well."
 
-        if charm <= 10:
-            "Still, I think I spent a lot of CHARM on that. I don't think I can do this for long."
+        "I watch as she turns over and goes back to sleep."
+
+        "...Or not."
 
         jump wake_merge
 
 label wake_merge:
     
-    mc "Hmm I don't think I can make much progress with her in this state."
+    mc "Hmm, I don't think I can make much progress with her in this state."
 
     mc "I guess I'll head outside for a bit of fresh air."
 
@@ -270,21 +271,35 @@ label wake_merge:
 
 label athena_leaves:
 
-    show athena tired2
-    athena "mm...m.."
+    show athena tireddark2
+    athena "Eeuu..."
 
-    show athena tired1
-    athena "H-hi? Who are you?"
+    show athena tireddark1
+    athena "...Hi? Who are you?"
 
-    mc "I'm [name], did Claire send you to my party?"
+    mc "I'm [name]."
+    mc "You're, um."
+    mc "In my bed."
+    mc "Did Claire send you to my party?"
 
     show athena tireddark2
-    athena "I think there's been some kind of a mistake. I shouldn't be here."
+    athena "Huh? I don't..."
+    athena "I don't know a Claire."
+
+    show athena tireddark1
+    athena "I don't even know where I am."
+
+    show athena tireddark2
+    athena "I think there's been some kind of a mistake."
+    athena "I shouldn't be here."
+
+    show athena tireddark1
+    athena "I'm sorry to have bothered you."
 
     hide athena
     with Dissolve(0.5)
 
-    mc "Well that's unfortunate."
+    mc "Well, that's... Unfortunate."
 
     mc "I guess I'll head outside for a bit of fresh air."
 
