@@ -1,24 +1,24 @@
 style yes_btn is button:
-    background Image("GUI/buttons/BlueBtn.png", xalign=0.5, yalign=0.5)
-    hover_background Image("GUI/buttons/BlueBtnPressed.png", xalign=0.5, yalign=0.5)
-    xminimum 100
+    background Image("GUI/buttons/yes_btn.png", xalign=0.5, yalign=0.5)
+    hover_background Image("GUI/buttons/yes_btn_hover.png", xalign=0.5, yalign=0.5)
+    xminimum 200
     yminimum 100
 
 style no_btn is button:
-    background Image("GUI/buttons/RedBtn.png", xalign=0.5, yalign=0.5)
-    hover_background Image("GUI/buttons/RedBtnPressed.png", xalign=0.5, yalign=0.5)
-    xminimum 100
+    background Image("GUI/buttons/no_btn.png", xalign=0.5, yalign=0.5)
+    hover_background Image("GUI/buttons/no_btn_hover.png", xalign=0.5, yalign=0.5)
+    xminimum 200
     yminimum 100
 
 style yes_btn_text is text:
-    yalign 0.5
+    yalign 0.6
     xalign 0.5
     size 45
     hover_color "#ffffff"
     color "#000000" 
 
 style no_btn_text is text:
-    yalign 0.5
+    yalign 0.6
     xalign 0.5
     size 45
     hover_color "#ffffff"
