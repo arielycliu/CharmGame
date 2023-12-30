@@ -3,4 +3,4 @@ label athena:
     show athena asleep
     athena "hi"
     show screen bars
-    jump ellie
+    jump chmsq

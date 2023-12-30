@@ -218,9 +218,9 @@ label may:
     jump athena
 
 
-
-
 label may_leaves:
+    $ may_approval = 0
+    $ may_stayed = False
     scene bg sittingroom
     show may sweat
     may "Uh..."

@@ -226,6 +226,6 @@ image charms4:
     charm_zoom
 
 label start:
+    $ name = "Richard"
     $ charm = 50
-    default name = "Janice"
     jump ellie

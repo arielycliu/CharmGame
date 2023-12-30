@@ -179,5 +179,5 @@ label tutorial:
         show claire delighted2
         claire "Best of luck!"
 
-    jump character_intros
+    jump chad
 

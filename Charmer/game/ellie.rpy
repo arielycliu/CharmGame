@@ -26,23 +26,39 @@ label ellie:
     show ellie abashed
     ellie "Please, call me Ellie. Only my parents call me Eleanor."
 
-    menu:
-        "Eleanor's such a lovely name, though. (-10 Charm)":
-            $ ellie_approval -= 10
-            $ charm_start = charm
+    if charm >= 10:
+        menu:
+            "Eleanor's such a lovely name, though. (-10 Charm)":
+                $ ellie_approval -= 10
+                $ charm_start = charm
 
-            while charm > charm_start - 10:
-                $ charm -= 1
-                pause(0.0001)
+                while charm > charm_start - 10:
+                    $ charm -= 1
+                    pause(0.0001)
 
-            jump ellie_1
+                if ellie_approval <= 0:
+                    jump ellie_leaves
 
-        "Got it. It's nice to meet you, Ellie.":
-            jump ellie_2
+                jump ellie_1
 
-        "Um, hello, Ellie.":
-            $ ellie_approval -= 5
-            jump ellie_3
+            "Got it. It's nice to meet you, Ellie.":
+                jump ellie_2
+
+            "Um, hello, Ellie.":
+                $ ellie_approval -= 5
+                if ellie_approval <= 0:
+                    jump ellie_leaves
+                jump ellie_3
+    else:
+        menu:
+            "Got it. It's nice to meet you, Ellie.":
+                jump ellie_2
+
+            "Um, hello, Ellie.":
+                $ ellie_approval -= 5
+                if ellie_approval <= 0:
+                    jump ellie_leaves
+                jump ellie_3
 
     label ellie_1:
         show ellie sad
@@ -102,12 +118,14 @@ label ellie_merge:
     menu:
         "Yeah, I've always been interested in his theories.":
             $ ellie_approval -= 5
-
+            if ellie_approval <= 0:
+                jump ellie_leaves
             jump dickens_1
 
         "I'm not really, haha. I just bought that because it looked nice.":
             $ ellie_approval -= 5
-
+            if ellie_approval <= 0:
+                jump ellie_leaves
             jump dickens_2
 
         "You're right - that it does.":
@@ -203,12 +221,11 @@ label dickens_merge:
 
         "What about your face?":
             $ ellie_approval -= 10
-
             jump look_2
 
         "What about the floor?":
             $ ellie_approval -= 5
-        
+            
             jump look_3
 
     label look_1:
@@ -240,6 +257,9 @@ label dickens_merge:
 
         ellie "We can't judge people by their appearances, right?"
 
+        if ellie_approval <= 0:
+            jump ellie_leaves
+
         "Her eyes go to the things hanging on the wall."
 
         jump look_merge
@@ -253,6 +273,9 @@ label dickens_merge:
         mc "Er- no, not really."
 
         ellie "I'm not sure it tells me anything, then."
+
+        if ellie_approval <= 0:
+            jump ellie_leaves
 
         "She looks back up at the wall."
 
@@ -306,12 +329,14 @@ label look_merge:
     menu:
         "It sounds like they were just trying to help you.":
             $ ellie_approval -= 5
-
+            if ellie_approval <= 0:
+                jump ellie_leaves
             jump parents_1
 
         "They seem like pretty terrible people to me. Maybe you should cut contact with them.":
             $ ellie_approval -= 5
-
+            if ellie_approval <= 0:
+                jump ellie_leaves
             jump parents_2
 
         "Sometimes families don't have the right idea of what's best.":
@@ -376,24 +401,40 @@ label parents_merge:
 
     ellie "I didn't want to bum you out or anything."
 
-    menu:
-        "No, that's okay. I'm touched that you trusted me enough to tell me that. (-10 Charm)":
-            $ ellie_approval += 0
-            $ charm_start = charm
-            while charm > charm_start - 10: # decrease charm bar
-                $ charm -= 1
-                pause(0.0001)
-            jump random_1
+    if charm >= 10:
+        menu:
+            "No, that's okay. I'm touched that you trusted me enough to tell me that. (-10 Charm)":
+                $ ellie_approval += 0
+                $ charm_start = charm
+                while charm > charm_start - 10: # decrease charm bar
+                    $ charm -= 1
+                    pause(0.0001)
+                jump random_1
 
-        "Kind of, yeah, but I'm glad you mentioned it.":
-            $ ellie_approval -= 5
+            "Kind of, yeah, but I'm glad you mentioned it.":
+                $ ellie_approval -= 5
+                if ellie_approval <= 0:
+                    jump ellie_leaves
+                jump random_2
 
-            jump random_2
+            "It's always nice to get juicy family backstory, haha.":
+                $ ellie_approval -= 10
+                if ellie_approval <= 0:
+                    jump ellie_leaves
+                jump random_3
+    else:
+        menu:
+            "Kind of, yeah, but I'm glad you mentioned it.":
+                $ ellie_approval -= 5
+                if ellie_approval <= 0:
+                    jump ellie_leaves
+                jump random_2
 
-        "It's always nice to get juicy family backstory, haha.":
-            $ ellie_approval -= 10
-
-            jump random_3
+            "It's always nice to get juicy family backstory, haha.":
+                $ ellie_approval -= 10
+                if ellie_approval <= 0:
+                    jump ellie_leaves
+                jump random_3
 
     label random_1:
         show ellie shy
@@ -469,23 +510,40 @@ label random_merge:
     ellie "Hahaha, sorry."
 
     show ellie delighted
-    menu:
-        "Oh. You laugh at your own jokes, Ellie.":
 
-            jump laugh_1
+    if charm >= 10:
+        menu:
+            "Oh. You laugh at your own jokes, Ellie.":
+                $ ellie_approval -= 5
+                if ellie_approval <= 0:
+                    jump ellie_leaves
+                jump laugh_1
 
-        "You should smile like that for me more often. (-10 Charm)":
-            $ ellie_approval -= 5
-            $ charm_start = charm
-            while charm > charm_start - 10: # decrease charm bar
-                $ charm -= 1
-                pause(0.0001)
+            "You should smile like that for me more often. (-10 Charm)":
+                $ ellie_approval -= 5
+                $ charm_start = charm
+                while charm > charm_start - 10: # decrease charm bar
+                    $ charm -= 1
+                    pause(0.0001)
 
-            jump laugh_2
+                if ellie_approval <= 0:
+                    jump ellie_leaves
+                jump laugh_2
 
-        "No need to apologize - I got to see your pretty laugh.":
+            "No need to apologize - I got to see your pretty laugh.":
 
-            jump laugh_3
+                jump laugh_3
+    else:
+        menu:
+            "Oh. You laugh at your own jokes, Ellie.":
+                $ ellie_approval -= 5
+                if ellie_approval <= 0:
+                    jump ellie_leaves
+                jump laugh_1
+
+            "No need to apologize - I got to see your pretty laugh.":
+
+                jump laugh_3
 
     label laugh_1:
         show ellie happy
@@ -549,4 +607,15 @@ label laugh_merge:
 
     mc "Of course, Ellie."
 
+    jump may
+
+label ellie_leaves:
+    $ ellie_approval = 0
+    $ ellie_stays = False
+    scene bg hallway
+    show ellie disappointed
+    ellie "Uh... I don't really feel comfortable here"
+    ellie "I think I'll leave early."
+
+    hide ellie
     jump may
