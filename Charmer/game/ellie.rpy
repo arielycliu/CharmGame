@@ -2,7 +2,7 @@ label ellie:
     scene bg hallway
     show screen bars
     
-    "I slip into the hallway to take a moment to gather myself. Claire was right -’ these conversations do take up a lot of energy. I've only just gotten started, though, so I can't afford to take a break now."
+    "I slip into the hallway to take a moment to gather myself. Claire was right - these conversations do take up a lot of energy. I've only just gotten started, though, so I can't afford to take a break now."
 
     "I already caught loads of flak from the head succubi at last year's gala."
 
